@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "name": "Game Action Module",
+    "version": "1.0.0",
+    "description": "Модуль действий для управления игрой"
+  },
+  "categories": {
+    "control": ["call_function", "call_exception", "dummy", "break", "return_function", "skip_iteration", "stop_repeat", "wait", "start_process"],
+    "entity": ["damage", "heal", "teleport", "remove", "set_health", "set_custom_name", "set_ai", "set_gravity", "set_invisible", "set_glowing"],
+    "player": ["message", "give_items", "teleport", "kick", "set_gamemode", "set_health", "send_title", "play_sound"],
+    "world": ["set_block", "break_block", "create_explosion", "set_world_time", "set_world_weather", "generate_tree"],
+    "repeat": ["while", "forever", "multi_times", "for_each_in_list", "on_range", "on_grid"],
+    "select": ["all_players", "all_entities", "filter_by_distance", "add_entity_by_name", "random_entity"]
+  },
+  "action_templates": {
+    "damage": {
+      "template": {
+        "action": "damage",
+        "target": "{target}",
+        "amount": "{amount}",
+        "source": "{source}"
+      },
+      "example": {
+        "action": "damage",
+        "target": "@p",
+        "amount": 10,
+        "source": "fall"
+      }
+    },
+    "teleport": {
+      "template": {
+        "action": "teleport",
+        "target": "{target}",
+        "location": "{x},{y},{z}",
+        "keep_rotation": false
+      },
+      "example": {
+        "action": "teleport",
+        "target": "@p",
+        "location": "100,64,200",
+        "keep_rotation": true
+      }
+    },
+    "give_items": {
+      "template": {
+        "action": "give_items",
+        "target": "{target}",
+        "items": ["{item}"],
+        "amount": 1
+      },
+      "example": {
+        "action": "give_items",
+        "target": "@p",
+        "items": ["diamond_sword", "golden_apple"],
+        "amount": 1
+      }
+    },
+    "set_block": {
+      "template": {
+        "action": "set_block",
+        "location": "{x},{y},{z}",
+        "block": "{block}",
+        "update": true
+      },
+      "example": {
+        "action": "set_block",
+        "location": "100,64,200",
+        "block": "diamond_block",
+        "update": true
+      }
+    }
+  },
+  "common_combos": {
+    "kill_entity": ["entity_damage", "entity_remove"],
+    "teleport_to_spawn": ["player_teleport", "player_set_rotation"],
+    "explode_area": ["game_create_explosion", "game_break_block"],
+    "give_kit": ["player_give_items", "player_send_message"]
+  },
+  "quick_reference": {
+    "targets": ["@p", "@a", "@r", "@e", "@s"],
+    "gamemodes": ["survival", "creative", "adventure", "spectator"],
+    "damage_sources": ["fall", "lava", "fire", "drowning", "explosion", "magic", "void"],
+    "time_units": ["ticks", "seconds", "minutes"],
+    "block_faces": ["north", "south", "east", "west", "up", "down"]
+  },
+  "examples": {
+    "player_damage": {
+      "description": "Нанести урон игроку",
+      "code": {
+        "action": "damage",
+        "target": "@p",
+        "amount": 5,
+        "source": "magic"
+      }
+    },
+    "teleport_all": {
+      "description": "Телепортировать всех игроков",
+      "code": {
+        "select": "all_players",
+        "action": "teleport",
+        "location": "0,64,0"
+      }
+    },
+    "give_diamond": {
+      "description": "Выдать алмаз",
+      "code": {
+        "action": "give_items",
+        "target": "@p",
+        "items": ["diamond"],
+        "amount": 1
+      }
+    },
+    "explosion": {
+      "description": "Создать взрыв",
+      "code": {
+        "action": "create_explosion",
+        "location": "100,64,100",
+        "power": 4,
+        "fire": true,
+        "break_blocks": true
+      }
+    },
+    "heal_player": {
+      "description": "Вылечить игрока",
+      "code": {
+        "action": "heal",
+        "target": "@p",
+        "amount": 10
+      }
+    }
+  },
+  "conditions": {
+    "player_has_item": {
+      "check": "has_item",
+      "target": "{player}",
+      "item": "{item}",
+      "min_count": 1
+    },
+    "entity_in_area": {
+      "check": "in_area",
+      "target": "{entity}",
+      "pos1": "{x1},{y1},{z1}",
+      "pos2": "{x2},{y2},{z2}"
+    },
+    "block_equals": {
+      "check": "block_equals",
+      "location": "{x},{y},{z}",
+      "block": "{block}"
+    },
+    "player_gamemode": {
+      "check": "gamemode_equals",
+      "target": "{player}",
+      "gamemode": "{mode}"
+    }
+  },
+  "loops": {
+    "repeat_10_times": {
+      "type": "multi_times",
+      "count": 10,
+      "variable": "i",
+      "actions": []
+    },
+    "for_each_player": {
+      "type": "for_each_in_list",
+      "list": "all_players",
+      "variable": "player",
+      "actions": []
+    },
+    "while_true": {
+      "type": "while",
+      "condition": {},
+      "actions": []
+    },
+    "on_grid_3x3": {
+      "type": "on_grid",
+      "start": "0,0,0",
+      "end": "2,2,2",
+      "variable": "pos",
+      "actions": []
+    }
+  },
+  "events": {
+    "player_join": {
+      "event": "player_join",
+      "cancellable": false,
+      "actions": []
+    },
+    "player_death": {
+      "event": "player_death",
+      "cancellable": true,
+      "actions": []
+    },
+    "block_break": {
+      "event": "player_break_block",
+      "cancellable": true,
+      "actions": []
+    },
+    "entity_spawn": {
+      "event": "entity_spawn",
+      "cancellable": true,
+      "actions": []
+    }
+  },
+  "variables": {
+    "types": ["number", "text", "location", "item", "array", "map", "boolean", "vector"],
+    "operations": ["set", "add", "subtract", "multiply", "divide", "random"],
+    "scope": ["local", "global", "save"]
+  }
+}
