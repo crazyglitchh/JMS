@@ -1,0 +1,1353 @@
+{
+  "handlers": [
+    {
+      "type": "process",
+      "position": 0,
+      "operations": [
+        {
+          "action": "set_variable_get_coordinate",
+          "values": [
+            {
+              "name": "type",
+              "value": {
+                "type": "enum",
+                "enum": "Y"
+              }
+            },
+            {
+              "name": "location",
+              "value": {
+                "type": "location",
+                "x": -25,
+                "y": 3,
+                "z": -25,
+                "yaw": 90,
+                "pitch": 0
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "y",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_get_coordinate",
+          "values": [
+            {
+              "name": "type",
+              "value": {
+                "type": "enum",
+                "enum": "X"
+              }
+            },
+            {
+              "name": "location",
+              "value": {
+                "type": "location",
+                "x": -25,
+                "y": 3,
+                "z": -25,
+                "yaw": 90,
+                "pitch": 0
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "x1",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_get_coordinate",
+          "values": [
+            {
+              "name": "type",
+              "value": {
+                "type": "enum",
+                "enum": "Z"
+              }
+            },
+            {
+              "name": "location",
+              "value": {
+                "type": "location",
+                "x": -25,
+                "y": 3,
+                "z": -25,
+                "yaw": 90,
+                "pitch": 0
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "z1",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_get_coordinate",
+          "values": [
+            {
+              "name": "type",
+              "value": {
+                "type": "enum",
+                "enum": "X"
+              }
+            },
+            {
+              "name": "location",
+              "value": {
+                "type": "location",
+                "x": 25,
+                "y": 3,
+                "z": 25,
+                "yaw": 90,
+                "pitch": 0
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "x2",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_get_coordinate",
+          "values": [
+            {
+              "name": "type",
+              "value": {
+                "type": "enum",
+                "enum": "Z"
+              }
+            },
+            {
+              "name": "location",
+              "value": {
+                "type": "location",
+                "x": 25,
+                "y": 3,
+                "z": 25,
+                "yaw": 90,
+                "pitch": 0
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "z2",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_min",
+          "values": [
+            {
+              "name": "value",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "variable",
+                    "variable": "x1",
+                    "scope": "local"
+                  },
+                  {
+                    "type": "variable",
+                    "variable": "x2",
+                    "scope": "local"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "min_x",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_min",
+          "values": [
+            {
+              "name": "value",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "variable",
+                    "variable": "z1",
+                    "scope": "local"
+                  },
+                  {
+                    "type": "variable",
+                    "variable": "z2",
+                    "scope": "local"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "min_z",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_max",
+          "values": [
+            {
+              "name": "value",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "variable",
+                    "variable": "x1",
+                    "scope": "local"
+                  },
+                  {
+                    "type": "variable",
+                    "variable": "x2",
+                    "scope": "local"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "max_x",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_max",
+          "values": [
+            {
+              "name": "value",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "variable",
+                    "variable": "z1",
+                    "scope": "local"
+                  },
+                  {
+                    "type": "variable",
+                    "variable": "z2",
+                    "scope": "local"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "max_z",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_set_all_coordinates",
+          "values": [
+            {
+              "name": "x",
+              "value": {
+                "type": "variable",
+                "variable": "min_x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "y",
+              "value": {
+                "type": "variable",
+                "variable": "y",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "type": "variable",
+                "variable": "min_z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "corner_min",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_set_all_coordinates",
+          "values": [
+            {
+              "name": "x",
+              "value": {
+                "type": "variable",
+                "variable": "max_x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "y",
+              "value": {
+                "type": "variable",
+                "variable": "y",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "type": "variable",
+                "variable": "max_z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "corner_max",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_shift_all_coordinates",
+          "values": [
+            {
+              "name": "x",
+              "value": {
+                "type": "number",
+                "number": -1
+              }
+            },
+            {
+              "name": "y",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "type": "number",
+                "number": -1
+              }
+            },
+            {
+              "name": "location",
+              "value": {
+                "type": "variable",
+                "variable": "corner_min",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "jmcc.11",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "game_set_region",
+          "values": [
+            {
+              "name": "block",
+              "value": {
+                "type": "text",
+                "text": "dark_oak_planks"
+              }
+            },
+            {
+              "name": "pos_1",
+              "value": {
+                "type": "variable",
+                "variable": "jmcc.11",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "pos_2",
+              "value": {
+                "type": "variable",
+                "variable": "corner_max",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_shift_coordinate",
+          "values": [
+            {
+              "name": "distance",
+              "value": {
+                "type": "number",
+                "number": 1
+              }
+            },
+            {
+              "name": "type",
+              "value": {
+                "type": "enum",
+                "enum": "Y"
+              }
+            },
+            {
+              "name": "location",
+              "value": {
+                "type": "variable",
+                "variable": "corner_min",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "jmcc.12",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_shift_coordinate",
+          "values": [
+            {
+              "name": "distance",
+              "value": {
+                "type": "number",
+                "number": 1
+              }
+            },
+            {
+              "name": "type",
+              "value": {
+                "type": "enum",
+                "enum": "Y"
+              }
+            },
+            {
+              "name": "location",
+              "value": {
+                "type": "variable",
+                "variable": "corner_max",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "jmcc.13",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "game_set_region",
+          "values": [
+            {
+              "name": "block",
+              "value": {
+                "type": "text",
+                "text": "air"
+              }
+            },
+            {
+              "name": "pos_1",
+              "value": {
+                "type": "variable",
+                "variable": "jmcc.12",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "pos_2",
+              "value": {
+                "type": "variable",
+                "variable": "jmcc.13",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "distance_x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_local(max_x)-%var_local(min_x))"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "distance_z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_local(max_x)-%var_local(min_x))"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "iterations_needed",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_local(distance_x)*%var_local(distance_z))"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "iterations",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_random_number",
+          "values": [
+            {
+              "name": "min",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            },
+            {
+              "name": "max",
+              "value": {
+                "type": "number",
+                "number": 9999999
+              }
+            },
+            {
+              "name": "integer",
+              "value": {
+                "type": "enum",
+                "enum": "TRUE"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "seed",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "ticks",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            }
+          ]
+        },
+        {
+          "action": "call_function",
+          "values": [
+            {
+              "name": "function_name",
+              "value": {
+                "type": "text",
+                "text": "iterator"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&aГенерация завершена!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ],
+          "selection": {
+            "type": "all_players"
+          }
+        }
+      ],
+      "is_hidden": false,
+      "name": "generate"
+    },
+    {
+      "type": "function",
+      "position": 1,
+      "operations": [
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_local(iterations)%%var_local(distance_x))"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_local(iterations)/%var_local(distance_x))"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_shift_all_coordinates",
+          "values": [
+            {
+              "name": "x",
+              "value": {
+                "type": "variable",
+                "variable": "x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "y",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "location",
+              "value": {
+                "type": "variable",
+                "variable": "corner_min",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "location",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_perlin_noise_3d",
+          "values": [
+            {
+              "name": "seed",
+              "value": {
+                "type": "variable",
+                "variable": "seed",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "loc_frequency",
+              "value": {
+                "type": "number",
+                "number": 6
+              }
+            },
+            {
+              "name": "octaves",
+              "value": {
+                "type": "number",
+                "number": 0.65
+              }
+            },
+            {
+              "name": "frequency",
+              "value": {
+                "type": "number",
+                "number": 2.75
+              }
+            },
+            {
+              "name": "normalized",
+              "value": {
+                "type": "enum",
+                "enum": "TRUE"
+              }
+            },
+            {
+              "name": "location",
+              "value": {
+                "type": "variable",
+                "variable": "location",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "range_mode",
+              "value": {
+                "type": "enum",
+                "enum": "ZERO_TO_ONE"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "noise",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "block",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "text",
+                "text": "grass_block"
+              }
+            }
+          ]
+        },
+        {
+          "action": "if_variable_greater",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "noise",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "block",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "text",
+                    "text": "spruce_slab[waterlogged=true]"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "game_set_block",
+          "values": [
+            {
+              "name": "block",
+              "value": {
+                "type": "variable",
+                "variable": "block",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "locations",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "variable",
+                    "variable": "location",
+                    "scope": "local"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_increment",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "iterations",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "number",
+              "value": {
+                "type": "number",
+                "number": 1
+              }
+            }
+          ]
+        },
+        {
+          "action": "if_variable_less",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "variable",
+                "variable": "iterations_needed",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "iterations",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "if_variable_greater",
+              "values": [
+                {
+                  "name": "compare",
+                  "value": {
+                    "type": "number",
+                    "number": 10
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "ticks",
+                    "scope": "local"
+                  }
+                }
+              ],
+              "is_inverted": false,
+              "operations": [
+                {
+                  "action": "control_wait",
+                  "values": [
+                    {
+                      "name": "duration",
+                      "value": {
+                        "type": "number",
+                        "number": 1
+                      }
+                    },
+                    {
+                      "name": "time_unit",
+                      "value": {
+                        "type": "enum",
+                        "enum": "TICKS"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "action": "set_variable_value",
+                  "values": [
+                    {
+                      "name": "variable",
+                      "value": {
+                        "type": "variable",
+                        "variable": "ticks",
+                        "scope": "local"
+                      }
+                    },
+                    {
+                      "name": "value",
+                      "value": {
+                        "type": "number",
+                        "number": 0
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "action": "else",
+              "values": [],
+              "is_inverted": false,
+              "operations": [
+                {
+                  "action": "set_variable_increment",
+                  "values": [
+                    {
+                      "name": "variable",
+                      "value": {
+                        "type": "variable",
+                        "variable": "ticks",
+                        "scope": "local"
+                      }
+                    },
+                    {
+                      "name": "number",
+                      "value": {
+                        "type": "number",
+                        "number": 1
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "iterator"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "iterator"
+    },
+    {
+      "type": "event",
+      "position": 2,
+      "operations": [
+        {
+          "action": "if_player_chat_message_equals",
+          "values": [
+            {
+              "name": "chat_messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "@generate"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "if_player_name_equals",
+              "values": [
+                {
+                  "name": "names_or_uuids",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": "rqbik"
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                }
+              ],
+              "is_inverted": false,
+              "operations": [
+                {
+                  "action": "player_send_message",
+                  "values": [
+                    {
+                      "name": "messages",
+                      "value": {
+                        "type": "array",
+                        "values": [
+                          {
+                            "type": "text",
+                            "text": "&9Генерация..."
+                          },
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {}
+                        ]
+                      }
+                    },
+                    {
+                      "name": "merging",
+                      "value": {
+                        "type": "enum",
+                        "enum": "SPACES"
+                      }
+                    }
+                  ],
+                  "selection": {
+                    "type": "all_players"
+                  }
+                },
+                {
+                  "action": "start_process",
+                  "values": [
+                    {
+                      "name": "process_name",
+                      "value": {
+                        "type": "text",
+                        "text": "generate"
+                      }
+                    },
+                    {
+                      "name": "local_variables_mode",
+                      "value": {
+                        "type": "enum",
+                        "enum": "COPY"
+                      }
+                    },
+                    {
+                      "name": "target_mode",
+                      "value": {
+                        "type": "enum",
+                        "enum": "CURRENT_TARGET"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "event": "player_chat"
+    }
+  ]
+}
