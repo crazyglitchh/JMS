@@ -12,7 +12,7 @@
               "value": {
                 "type": "variable",
                 "variable": "world_size",
-                "scope": "game"
+                "scope": "save"
               }
             },
             {
@@ -32,7 +32,7 @@
               "value": {
                 "type": "variable",
                 "variable": "plot_spacing",
-                "scope": "game"
+                "scope": "save"
               }
             },
             {
@@ -52,7 +52,7 @@
               "value": {
                 "type": "variable",
                 "variable": "plots_per_side",
-                "scope": "game"
+                "scope": "save"
               }
             },
             {
@@ -72,7 +72,7 @@
               "value": {
                 "type": "variable",
                 "variable": "plot_y_level",
-                "scope": "game"
+                "scope": "save"
               }
             },
             {
@@ -92,7 +92,7 @@
               "value": {
                 "type": "variable",
                 "variable": "%player%_plot_x",
-                "scope": "game"
+                "scope": "save"
               }
             },
             {
@@ -112,7 +112,27 @@
               "value": {
                 "type": "variable",
                 "variable": "%player%_plot_z",
-                "scope": "game"
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_has_plot",
+                "scope": "save"
               }
             },
             {
@@ -132,20 +152,87 @@
               "value": {
                 "type": "variable",
                 "variable": "plot_owner",
-                "scope": "game"
+                "scope": "save"
               }
             }
           ]
         },
         {
-          "action": "set_variable_create_map",
+          "action": "set_variable_value",
           "values": [
             {
               "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "plot_floors",
-                "scope": "game"
+                "variable": "border_min_x",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": -50
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "border_max_x",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 50
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "border_min_z",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": -50
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "border_max_z",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 50
               }
             }
           ]
@@ -186,6 +273,46 @@
               "value": {
                 "type": "number",
                 "number": 0
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "is_within",
+                "scope": "game"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "plot_owner_result",
+                "scope": "game"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "text",
+                "text": ""
               }
             }
           ]
@@ -204,6 +331,150 @@
               "name": "variable",
               "value": {
                 "type": "variable",
+                "variable": "is_within",
+                "scope": "game"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            }
+          ]
+        },
+        {
+          "action": "if_variable_greater_or_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "variable",
+                "variable": "border_min_x",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "x",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "if_variable_less_or_equals",
+              "values": [
+                {
+                  "name": "compare",
+                  "value": {
+                    "type": "variable",
+                    "variable": "border_max_x",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "x",
+                    "scope": "local"
+                  }
+                }
+              ],
+              "is_inverted": false,
+              "operations": [
+                {
+                  "action": "if_variable_greater_or_equals",
+                  "values": [
+                    {
+                      "name": "compare",
+                      "value": {
+                        "type": "variable",
+                        "variable": "border_min_z",
+                        "scope": "save"
+                      }
+                    },
+                    {
+                      "name": "value",
+                      "value": {
+                        "type": "variable",
+                        "variable": "z",
+                        "scope": "local"
+                      }
+                    }
+                  ],
+                  "is_inverted": false,
+                  "operations": [
+                    {
+                      "action": "if_variable_less_or_equals",
+                      "values": [
+                        {
+                          "name": "compare",
+                          "value": {
+                            "type": "variable",
+                            "variable": "border_max_z",
+                            "scope": "save"
+                          }
+                        },
+                        {
+                          "name": "value",
+                          "value": {
+                            "type": "variable",
+                            "variable": "z",
+                            "scope": "local"
+                          }
+                        }
+                      ],
+                      "is_inverted": false,
+                      "operations": [
+                        {
+                          "action": "set_variable_value",
+                          "values": [
+                            {
+                              "name": "variable",
+                              "value": {
+                                "type": "variable",
+                                "variable": "is_within",
+                                "scope": "game"
+                              }
+                            },
+                            {
+                              "name": "value",
+                              "value": {
+                                "type": "number",
+                                "number": 1
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "is_within_borders"
+    },
+    {
+      "type": "function",
+      "position": 2,
+      "operations": [
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
                 "variable": "half",
                 "scope": "local"
               }
@@ -212,7 +483,7 @@
               "name": "value",
               "value": {
                 "type": "number",
-                "number": "%math(%var(world_size)/2)"
+                "number": "%math(%var_save(world_size)/2)"
               }
             }
           ]
@@ -232,7 +503,7 @@
               "name": "value",
               "value": {
                 "type": "number",
-                "number": "%math((%var_local(plot_x)*%var(plot_spacing))-%var_local(half)+(%var(plot_spacing)/2))"
+                "number": "%math((%var_local(plot_x)*%var_save(plot_spacing))-%var_local(half)+(%var_save(plot_spacing)/2))"
               }
             }
           ]
@@ -252,7 +523,7 @@
               "name": "value",
               "value": {
                 "type": "number",
-                "number": "%math((%var_local(plot_z)*%var(plot_spacing))-%var_local(half)+(%var(plot_spacing)/2))"
+                "number": "%math((%var_local(plot_z)*%var_save(plot_spacing))-%var_local(half)+(%var_save(plot_spacing)/2))"
               }
             }
           ]
@@ -263,8 +534,340 @@
     },
     {
       "type": "function",
-      "position": 2,
+      "position": 3,
       "operations": [
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "half",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_save(world_size)/2)"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "plot_x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math((%var_local(x)+%var_local(half))/%var_save(plot_spacing))"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "plot_z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math((%var_local(z)+%var_local(half))/%var_save(plot_spacing))"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_round",
+          "values": [
+            {
+              "name": "precision",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            },
+            {
+              "name": "round_type",
+              "value": {
+                "type": "enum",
+                "enum": "ROUND"
+              }
+            },
+            {
+              "name": "number",
+              "value": {
+                "type": "variable",
+                "variable": "plot_x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "plot_x",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_round",
+          "values": [
+            {
+              "name": "precision",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            },
+            {
+              "name": "round_type",
+              "value": {
+                "type": "enum",
+                "enum": "ROUND"
+              }
+            },
+            {
+              "name": "number",
+              "value": {
+                "type": "variable",
+                "variable": "plot_z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "plot_z",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "plot_key",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math((%var_local(plot_x)*1000)+%var_local(plot_z))"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_get_map_value",
+          "values": [
+            {
+              "name": "key",
+              "value": {
+                "type": "variable",
+                "variable": "plot_key",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "default_value",
+              "value": {
+                "type": "text",
+                "text": ""
+              }
+            },
+            {
+              "name": "map",
+              "value": {
+                "type": "variable",
+                "variable": "plot_owner",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "plot_owner_result",
+                "scope": "game"
+              }
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "get_plot_owner_by_location"
+    },
+    {
+      "type": "function",
+      "position": 4,
+      "operations": [
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "plot_x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_plot_x",
+                "scope": "save"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "plot_z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_plot_z",
+                "scope": "save"
+              }
+            }
+          ]
+        },
+        {
+          "action": "call_function",
+          "values": [
+            {
+              "name": "function_name",
+              "value": {
+                "type": "text",
+                "text": "get_plot_center"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_plot_x",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "plot_x",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_plot_z",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "plot_z",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "cx",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "result_x",
+                "scope": "game"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "cz",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "result_z",
+                "scope": "game"
+              }
+            }
+          ]
+        },
         {
           "action": "set_variable_value",
           "values": [
@@ -280,7 +883,7 @@
               "name": "value",
               "value": {
                 "type": "number",
-                "number": "%math(%var_local(center_x)-1)"
+                "number": "%math(%var_local(cx)-1)"
               }
             }
           ]
@@ -300,7 +903,7 @@
               "name": "value",
               "value": {
                 "type": "number",
-                "number": "%math(%var_local(center_x)+1)"
+                "number": "%math(%var_local(cx)+1)"
               }
             }
           ]
@@ -320,7 +923,7 @@
               "name": "value",
               "value": {
                 "type": "number",
-                "number": "%math(%var_local(center_z)-1)"
+                "number": "%math(%var_local(cz)-1)"
               }
             }
           ]
@@ -340,7 +943,7 @@
               "name": "value",
               "value": {
                 "type": "number",
-                "number": "%math(%var_local(center_z)+1)"
+                "number": "%math(%var_local(cz)+1)"
               }
             }
           ]
@@ -377,14 +980,249 @@
               }
             }
           ]
+        },
+        {
+          "action": "set_variable_set_all_coordinates",
+          "values": [
+            {
+              "name": "x",
+              "value": {
+                "type": "variable",
+                "variable": "cx",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "y",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_save(plot_y_level)+1)"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "type": "variable",
+                "variable": "cz",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "sign_loc",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "game_set_sign_text",
+          "values": [
+            {
+              "name": "location",
+              "value": {
+                "type": "variable",
+                "variable": "sign_loc",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "text",
+              "value": {
+                "type": "text",
+                "text": "&6Владелец:"
+              }
+            },
+            {
+              "name": "line",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            },
+            {
+              "name": "side",
+              "value": {
+                "type": "enum",
+                "enum": "FRONT"
+              }
+            }
+          ]
+        },
+        {
+          "action": "game_set_sign_text",
+          "values": [
+            {
+              "name": "location",
+              "value": {
+                "type": "variable",
+                "variable": "sign_loc",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "text",
+              "value": {
+                "type": "text",
+                "text": "%player%"
+              }
+            },
+            {
+              "name": "line",
+              "value": {
+                "type": "number",
+                "number": 1
+              }
+            },
+            {
+              "name": "side",
+              "value": {
+                "type": "enum",
+                "enum": "FRONT"
+              }
+            }
+          ]
+        },
+        {
+          "action": "game_set_sign_text",
+          "values": [
+            {
+              "name": "location",
+              "value": {
+                "type": "variable",
+                "variable": "sign_loc",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "text",
+              "value": {
+                "type": "text",
+                "text": "&7Плот"
+              }
+            },
+            {
+              "name": "line",
+              "value": {
+                "type": "number",
+                "number": 2
+              }
+            },
+            {
+              "name": "side",
+              "value": {
+                "type": "enum",
+                "enum": "FRONT"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "plot_key",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math((%var_save(%player%_plot_x)*1000)+%var_save(%player%_plot_z))"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_set_map_value",
+          "values": [
+            {
+              "name": "key",
+              "value": {
+                "type": "variable",
+                "variable": "plot_key",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "text",
+                "text": "%player%"
+              }
+            },
+            {
+              "name": "map",
+              "value": {
+                "type": "variable",
+                "variable": "plot_owner",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "plot_owner",
+                "scope": "save"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&aВаш плот построен!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
         }
       ],
       "is_hidden": false,
-      "name": "build_floor"
+      "name": "build_plot"
     },
     {
       "type": "function",
-      "position": 3,
+      "position": 5,
       "operations": [
         {
           "action": "set_variable_value",
@@ -425,7 +1263,7 @@
     },
     {
       "type": "function",
-      "position": 4,
+      "position": 6,
       "operations": [
         {
           "action": "set_variable_set_all_coordinates",
@@ -442,8 +1280,8 @@
               "name": "y",
               "value": {
                 "type": "variable",
-                "variable": "y_level",
-                "scope": "local"
+                "variable": "plot_y_level",
+                "scope": "save"
               }
             },
             {
@@ -470,9 +1308,8 @@
             {
               "name": "block",
               "value": {
-                "type": "variable",
-                "variable": "material",
-                "scope": "local"
+                "type": "text",
+                "text": "stone"
               }
             },
             {
@@ -666,1348 +1503,102 @@
     },
     {
       "type": "function",
-      "position": 5,
-      "operations": [
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "plot_x",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "%player%_plot_x",
-                "scope": "game"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "plot_z",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "%player%_plot_z",
-                "scope": "game"
-              }
-            }
-          ]
-        },
-        {
-          "action": "call_function",
-          "values": [
-            {
-              "name": "function_name",
-              "value": {
-                "type": "text",
-                "text": "get_plot_center"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "%player%_plot_x",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "plot_x",
-                "scope": "local"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "%player%_plot_z",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "plot_z",
-                "scope": "local"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "cx",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "result_x",
-                "scope": "game"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "cz",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "result_z",
-                "scope": "game"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "center_x",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "cx",
-                "scope": "local"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "center_z",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "cz",
-                "scope": "local"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "y_level",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "plot_y_level",
-                "scope": "game"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "material",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "text",
-                "text": "stone"
-              }
-            }
-          ]
-        },
-        {
-          "action": "call_function",
-          "values": [
-            {
-              "name": "function_name",
-              "value": {
-                "type": "text",
-                "text": "build_floor"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "cx",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "center_x",
-                "scope": "local"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "cz",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "center_z",
-                "scope": "local"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "plot_y_level",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "y_level",
-                "scope": "local"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "plot_key",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "number",
-                "number": "%math((%var(%player%_plot_x)*1000)+%var(%player%_plot_z))"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_set_map_value",
-          "values": [
-            {
-              "name": "key",
-              "value": {
-                "type": "variable",
-                "variable": "plot_key",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "text",
-                "text": "%player%"
-              }
-            },
-            {
-              "name": "map",
-              "value": {
-                "type": "variable",
-                "variable": "plot_owner",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "plot_owner",
-                "scope": "game"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_set_map_value",
-          "values": [
-            {
-              "name": "key",
-              "value": {
-                "type": "variable",
-                "variable": "plot_key",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "number",
-                "number": 1
-              }
-            },
-            {
-              "name": "map",
-              "value": {
-                "type": "variable",
-                "variable": "plot_floors",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "plot_floors",
-                "scope": "game"
-              }
-            }
-          ]
-        },
-        {
-          "action": "player_send_message",
-          "values": [
-            {
-              "name": "messages",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "text",
-                    "text": "&aВаш плот построен!"
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {}
-                ]
-              }
-            },
-            {
-              "name": "merging",
-              "value": {
-                "type": "enum",
-                "enum": "SPACES"
-              }
-            }
-          ]
-        }
-      ],
-      "is_hidden": false,
-      "name": "build_full_plot"
-    },
-    {
-      "type": "function",
-      "position": 6,
-      "operations": [
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "plot_key",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "number",
-                "number": "%math((%var(%player%_plot_x)*1000)+%var(%player%_plot_z))"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_get_map_value",
-          "values": [
-            {
-              "name": "key",
-              "value": {
-                "type": "variable",
-                "variable": "plot_key",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "default_value",
-              "value": {
-                "type": "number",
-                "number": 1
-              }
-            },
-            {
-              "name": "map",
-              "value": {
-                "type": "variable",
-                "variable": "plot_floors",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "current_floors",
-                "scope": "local"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_get_map_value",
-          "values": [
-            {
-              "name": "key",
-              "value": {
-                "type": "variable",
-                "variable": "plot_key",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "default_value",
-              "value": {
-                "type": "text",
-                "text": ""
-              }
-            },
-            {
-              "name": "map",
-              "value": {
-                "type": "variable",
-                "variable": "plot_owner",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "owner",
-                "scope": "local"
-              }
-            }
-          ]
-        },
-        {
-          "action": "if_variable_equals",
-          "values": [
-            {
-              "name": "compare",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "text",
-                    "text": "%player%"
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {}
-                ]
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "owner",
-                "scope": "local"
-              }
-            }
-          ],
-          "is_inverted": true,
-          "operations": [
-            {
-              "action": "player_send_message",
-              "values": [
-                {
-                  "name": "messages",
-                  "value": {
-                    "type": "array",
-                    "values": [
-                      {
-                        "type": "text",
-                        "text": "&cЭто не ваш плот!"
-                      },
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {}
-                    ]
-                  }
-                },
-                {
-                  "name": "merging",
-                  "value": {
-                    "type": "enum",
-                    "enum": "SPACES"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "control_return_function",
-              "values": []
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "plot_x",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "%player%_plot_x",
-                "scope": "game"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "plot_z",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "%player%_plot_z",
-                "scope": "game"
-              }
-            }
-          ]
-        },
-        {
-          "action": "call_function",
-          "values": [
-            {
-              "name": "function_name",
-              "value": {
-                "type": "text",
-                "text": "get_plot_center"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "%player%_plot_x",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "plot_x",
-                "scope": "local"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "%player%_plot_z",
-                "scope": "game"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "plot_z",
-                "scope": "local"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "cx",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "result_x",
-                "scope": "game"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "cz",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "result_z",
-                "scope": "game"
-              }
-            }
-          ]
-        },
-        {
-          "action": "if_variable_equals",
-          "values": [
-            {
-              "name": "compare",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "number",
-                    "number": 1
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {}
-                ]
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "current_floors",
-                "scope": "local"
-              }
-            }
-          ],
-          "is_inverted": false,
-          "operations": [
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "center_x",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "variable",
-                    "variable": "cx",
-                    "scope": "local"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "center_z",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "variable",
-                    "variable": "cz",
-                    "scope": "local"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "y_level",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "number",
-                    "number": "%math(%var(plot_y_level)+6)"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "material",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "text",
-                    "text": "stone_bricks"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "call_function",
-              "values": [
-                {
-                  "name": "function_name",
-                  "value": {
-                    "type": "text",
-                    "text": "build_floor"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "cx",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "variable",
-                    "variable": "center_x",
-                    "scope": "local"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "cz",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "variable",
-                    "variable": "center_z",
-                    "scope": "local"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_set_map_value",
-              "values": [
-                {
-                  "name": "key",
-                  "value": {
-                    "type": "variable",
-                    "variable": "plot_key",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "number",
-                    "number": 2
-                  }
-                },
-                {
-                  "name": "map",
-                  "value": {
-                    "type": "variable",
-                    "variable": "plot_floors",
-                    "scope": "game"
-                  }
-                },
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "plot_floors",
-                    "scope": "game"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "player_send_message",
-              "values": [
-                {
-                  "name": "messages",
-                  "value": {
-                    "type": "array",
-                    "values": [
-                      {
-                        "type": "text",
-                        "text": "&aПостроен 2 этаж!"
-                      },
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {}
-                    ]
-                  }
-                },
-                {
-                  "name": "merging",
-                  "value": {
-                    "type": "enum",
-                    "enum": "SPACES"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "control_return_function",
-              "values": []
-            }
-          ]
-        },
-        {
-          "action": "if_variable_equals",
-          "values": [
-            {
-              "name": "compare",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "number",
-                    "number": 2
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {}
-                ]
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "current_floors",
-                "scope": "local"
-              }
-            }
-          ],
-          "is_inverted": false,
-          "operations": [
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "center_x",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "variable",
-                    "variable": "cx",
-                    "scope": "local"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "center_z",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "variable",
-                    "variable": "cz",
-                    "scope": "local"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "y_level",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "number",
-                    "number": "%math(%var(plot_y_level)+12)"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "material",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "text",
-                    "text": "polished_andesite"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "call_function",
-              "values": [
-                {
-                  "name": "function_name",
-                  "value": {
-                    "type": "text",
-                    "text": "build_floor"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "cx",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "variable",
-                    "variable": "center_x",
-                    "scope": "local"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "cz",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "variable",
-                    "variable": "center_z",
-                    "scope": "local"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_set_map_value",
-              "values": [
-                {
-                  "name": "key",
-                  "value": {
-                    "type": "variable",
-                    "variable": "plot_key",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "number",
-                    "number": 3
-                  }
-                },
-                {
-                  "name": "map",
-                  "value": {
-                    "type": "variable",
-                    "variable": "plot_floors",
-                    "scope": "game"
-                  }
-                },
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "plot_floors",
-                    "scope": "game"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "player_send_message",
-              "values": [
-                {
-                  "name": "messages",
-                  "value": {
-                    "type": "array",
-                    "values": [
-                      {
-                        "type": "text",
-                        "text": "&aПостроен 3 этаж!"
-                      },
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {}
-                    ]
-                  }
-                },
-                {
-                  "name": "merging",
-                  "value": {
-                    "type": "enum",
-                    "enum": "SPACES"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "control_return_function",
-              "values": []
-            }
-          ]
-        },
-        {
-          "action": "player_send_message",
-          "values": [
-            {
-              "name": "messages",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "text",
-                    "text": "&cМаксимум этажей!"
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {}
-                ]
-              }
-            },
-            {
-              "name": "merging",
-              "value": {
-                "type": "enum",
-                "enum": "SPACES"
-              }
-            }
-          ]
-        }
-      ],
-      "is_hidden": false,
-      "name": "add_floor"
-    },
-    {
-      "type": "function",
       "position": 7,
       "operations": [
         {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "number",
+                    "number": 0
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_has_plot",
+                "scope": "save"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "player_send_message",
+              "values": [
+                {
+                  "name": "messages",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": "&cУ вас нет плота! Используйте @pl reset"
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                {
+                  "name": "merging",
+                  "value": {
+                    "type": "enum",
+                    "enum": "SPACES"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "control_return_function",
+              "values": []
+            }
+          ]
+        },
+        {
           "action": "set_variable_value",
           "values": [
             {
@@ -2023,7 +1614,7 @@
               "value": {
                 "type": "variable",
                 "variable": "%player%_plot_x",
-                "scope": "game"
+                "scope": "save"
               }
             }
           ]
@@ -2044,7 +1635,7 @@
               "value": {
                 "type": "variable",
                 "variable": "%player%_plot_z",
-                "scope": "game"
+                "scope": "save"
               }
             }
           ]
@@ -2069,7 +1660,7 @@
               "value": {
                 "type": "variable",
                 "variable": "%player%_plot_x",
-                "scope": "game"
+                "scope": "save"
               }
             },
             {
@@ -2090,7 +1681,7 @@
               "value": {
                 "type": "variable",
                 "variable": "%player%_plot_z",
-                "scope": "game"
+                "scope": "save"
               }
             },
             {
@@ -2160,7 +1751,7 @@
               "name": "y",
               "value": {
                 "type": "number",
-                "number": "%math(%var(plot_y_level)+1)"
+                "number": "%math(%var_save(plot_y_level)+1)"
               }
             },
             {
@@ -2278,6 +1869,2072 @@
               "name": "variable",
               "value": {
                 "type": "variable",
+                "variable": "px",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "game_value",
+                "game_value": "x_coordinate",
+                "selection": "{\"type\":\"default\"}"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "pz",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "game_value",
+                "game_value": "z_coordinate",
+                "selection": "{\"type\":\"default\"}"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "fixed",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "new_x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "px",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "new_z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "pz",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "if_variable_less",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "variable",
+                "variable": "border_min_x",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "px",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "new_x",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": "%math(%var_save(border_min_x)+5)"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "fixed",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "if_variable_greater",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "variable",
+                "variable": "border_max_x",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "px",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "new_x",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": "%math(%var_save(border_max_x)-5)"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "fixed",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "if_variable_less",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "variable",
+                "variable": "border_min_z",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "pz",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "new_z",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": "%math(%var_save(border_min_z)+5)"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "fixed",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "if_variable_greater",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "variable",
+                "variable": "border_max_z",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "pz",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "new_z",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": "%math(%var_save(border_max_z)-5)"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "fixed",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "number",
+                    "number": 1
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "fixed",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_set_all_coordinates",
+              "values": [
+                {
+                  "name": "x",
+                  "value": {
+                    "type": "variable",
+                    "variable": "new_x",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "y",
+                  "value": {
+                    "type": "number",
+                    "number": "%math(%var_save(plot_y_level)+1)"
+                  }
+                },
+                {
+                  "name": "z",
+                  "value": {
+                    "type": "variable",
+                    "variable": "new_z",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "new_loc",
+                    "scope": "local"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_teleport",
+              "values": [
+                {
+                  "name": "location",
+                  "value": {
+                    "type": "variable",
+                    "variable": "new_loc",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "keep_rotation",
+                  "value": {
+                    "type": "enum",
+                    "enum": "TRUE"
+                  }
+                },
+                {
+                  "name": "keep_velocity",
+                  "value": {
+                    "type": "enum",
+                    "enum": "FALSE"
+                  }
+                },
+                {
+                  "name": "ignore_passengers",
+                  "value": {
+                    "type": "enum",
+                    "enum": "FALSE"
+                  }
+                },
+                {
+                  "name": "dismount",
+                  "value": {
+                    "type": "enum",
+                    "enum": "TRUE"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_send_message",
+              "values": [
+                {
+                  "name": "messages",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": "&cВы были за границей мира! Телепорт в безопасную зону!"
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                {
+                  "name": "merging",
+                  "value": {
+                    "type": "enum",
+                    "enum": "SPACES"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "check_and_fix_player_position"
+    },
+    {
+      "type": "function",
+      "position": 9,
+      "operations": [
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "px",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "game_value",
+                "game_value": "x_coordinate",
+                "selection": "{\"type\":\"default\"}"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "pz",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "game_value",
+                "game_value": "z_coordinate",
+                "selection": "{\"type\":\"default\"}"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "px",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "pz",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "call_function",
+          "values": [
+            {
+              "name": "function_name",
+              "value": {
+                "type": "text",
+                "text": "get_plot_owner_by_location"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "px",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "x",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "pz",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "owner",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "plot_owner_result",
+                "scope": "game"
+              }
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": ""
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "owner",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": true,
+          "operations": [
+            {
+              "action": "if_variable_equals",
+              "values": [
+                {
+                  "name": "compare",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": "%player%"
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "owner",
+                    "scope": "local"
+                  }
+                }
+              ],
+              "is_inverted": true,
+              "operations": [
+                {
+                  "action": "player_send_message",
+                  "values": [
+                    {
+                      "name": "messages",
+                      "value": {
+                        "type": "array",
+                        "values": [
+                          {
+                            "type": "text",
+                            "text": "&cВы зашли на чужой плот! Телепорт на свой!"
+                          },
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {}
+                        ]
+                      }
+                    },
+                    {
+                      "name": "merging",
+                      "value": {
+                        "type": "enum",
+                        "enum": "SPACES"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "action": "call_function",
+                  "values": [
+                    {
+                      "name": "function_name",
+                      "value": {
+                        "type": "text",
+                        "text": "teleport_to_plot"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "check_other_plot"
+    },
+    {
+      "type": "function",
+      "position": 10,
+      "operations": [
+        {
+          "action": "set_variable_create_map",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "plot_owner",
+                "scope": "save"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&cВСЕ ПЛОТЫ СБРОШЕНЫ!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ],
+          "selection": {
+            "type": "all_players"
+          }
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&aИспользуйте &e@pl reset &aчтобы получить новый плот!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ],
+          "selection": {
+            "type": "all_players"
+          }
+        }
+      ],
+      "is_hidden": false,
+      "name": "reset_all_plots"
+    },
+    {
+      "type": "function",
+      "position": 11,
+      "operations": [
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "number",
+                    "number": 1
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_has_plot",
+                "scope": "save"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "plot_key",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": "%math((%var_save(%player%_plot_x)*1000)+%var_save(%player%_plot_z))"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "if_variable_map_has_key",
+              "values": [
+                {
+                  "name": "key",
+                  "value": {
+                    "type": "variable",
+                    "variable": "plot_key",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "map",
+                  "value": {
+                    "type": "variable",
+                    "variable": "plot_owner",
+                    "scope": "save"
+                  }
+                }
+              ],
+              "is_inverted": false,
+              "operations": [
+                {
+                  "action": "set_variable_remove_map_entry",
+                  "values": [
+                    {
+                      "name": "removed_value",
+                      "value": {
+                        "type": "variable",
+                        "variable": "plot_key",
+                        "scope": "local"
+                      }
+                    },
+                    {
+                      "name": "map",
+                      "value": {
+                        "type": "variable",
+                        "variable": "plot_owner",
+                        "scope": "save"
+                      }
+                    },
+                    {
+                      "name": "variable",
+                      "value": {
+                        "type": "variable",
+                        "variable": "plot_owner",
+                        "scope": "save"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "plot_x",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_plot_x",
+                    "scope": "save"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "plot_z",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_plot_z",
+                    "scope": "save"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "get_plot_center"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_plot_x",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "plot_x",
+                    "scope": "local"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_plot_z",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "plot_z",
+                    "scope": "local"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "cx",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "result_x",
+                    "scope": "game"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "cz",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "result_z",
+                    "scope": "game"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "x1",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": "%math(%var_local(cx)-2)"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "x2",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": "%math(%var_local(cx)+2)"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "z1",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": "%math(%var_local(cz)-2)"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "z2",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": "%math(%var_local(cz)+2)"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "x",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "x1",
+                    "scope": "local"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "clear_row"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_plot_x",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_plot_z",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_has_plot",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "clear_player_plot"
+    },
+    {
+      "type": "function",
+      "position": 12,
+      "operations": [
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "z1",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "call_function",
+          "values": [
+            {
+              "name": "function_name",
+              "value": {
+                "type": "text",
+                "text": "clear_cell"
+              }
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "clear_row"
+    },
+    {
+      "type": "function",
+      "position": 13,
+      "operations": [
+        {
+          "action": "set_variable_set_all_coordinates",
+          "values": [
+            {
+              "name": "x",
+              "value": {
+                "type": "variable",
+                "variable": "x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "y",
+              "value": {
+                "type": "variable",
+                "variable": "plot_y_level",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "loc",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "game_set_block",
+          "values": [
+            {
+              "name": "block",
+              "value": {
+                "type": "text",
+                "text": "air"
+              }
+            },
+            {
+              "name": "locations",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "variable",
+                    "variable": "loc",
+                    "scope": "local"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_set_all_coordinates",
+          "values": [
+            {
+              "name": "x",
+              "value": {
+                "type": "variable",
+                "variable": "x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "y",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_save(plot_y_level)+1)"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "loc_up",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "game_set_block",
+          "values": [
+            {
+              "name": "block",
+              "value": {
+                "type": "text",
+                "text": "air"
+              }
+            },
+            {
+              "name": "locations",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "variable",
+                    "variable": "loc_up",
+                    "scope": "local"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_set_all_coordinates",
+          "values": [
+            {
+              "name": "x",
+              "value": {
+                "type": "variable",
+                "variable": "x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "y",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_save(plot_y_level)+2)"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "loc_up2",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "game_set_block",
+          "values": [
+            {
+              "name": "block",
+              "value": {
+                "type": "text",
+                "text": "air"
+              }
+            },
+            {
+              "name": "locations",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "variable",
+                    "variable": "loc_up2",
+                    "scope": "local"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_local(z)+1)"
+              }
+            }
+          ]
+        },
+        {
+          "action": "if_variable_less_or_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "variable",
+                "variable": "z2",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "control_wait",
+              "values": [
+                {
+                  "name": "duration",
+                  "value": {
+                    "type": "number",
+                    "number": 0
+                  }
+                },
+                {
+                  "name": "time_unit",
+                  "value": {
+                    "type": "enum",
+                    "enum": "TICKS"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "clear_cell"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "else",
+          "values": [],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "x",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": "%math(%var_local(x)+1)"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "if_variable_less_or_equals",
+              "values": [
+                {
+                  "name": "compare",
+                  "value": {
+                    "type": "variable",
+                    "variable": "x2",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "x",
+                    "scope": "local"
+                  }
+                }
+              ],
+              "is_inverted": false,
+              "operations": [
+                {
+                  "action": "control_wait",
+                  "values": [
+                    {
+                      "name": "duration",
+                      "value": {
+                        "type": "number",
+                        "number": 0
+                      }
+                    },
+                    {
+                      "name": "time_unit",
+                      "value": {
+                        "type": "enum",
+                        "enum": "TICKS"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "action": "call_function",
+                  "values": [
+                    {
+                      "name": "function_name",
+                      "value": {
+                        "type": "text",
+                        "text": "clear_row"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "clear_cell"
+    },
+    {
+      "type": "function",
+      "position": 14,
+      "operations": [
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "number",
+                    "number": 1
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_has_plot",
+                "scope": "save"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "plot_x",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_plot_x",
+                    "scope": "save"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "plot_z",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_plot_z",
+                    "scope": "save"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "get_plot_center"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_plot_x",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "plot_x",
+                    "scope": "local"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_plot_z",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "plot_z",
+                    "scope": "local"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "build_plot"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_send_message",
+              "values": [
+                {
+                  "name": "messages",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": "&aВаш плот восстановлен!"
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                {
+                  "name": "merging",
+                  "value": {
+                    "type": "enum",
+                    "enum": "SPACES"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "load_player_plot"
+    },
+    {
+      "type": "function",
+      "position": 15,
+      "operations": [
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "old_has_plot",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_has_plot",
+                "scope": "save"
+              }
+            }
+          ]
+        },
+        {
+          "action": "call_function",
+          "values": [
+            {
+              "name": "function_name",
+              "value": {
+                "type": "text",
+                "text": "clear_player_plot"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
                 "variable": "given",
                 "scope": "local"
               }
@@ -2306,7 +3963,7 @@
               "name": "value",
               "value": {
                 "type": "number",
-                "number": "%math(%var(plots_per_side)-1)"
+                "number": "%math(%var_save(plots_per_side)-1)"
               }
             }
           ]
@@ -2349,7 +4006,7 @@
     },
     {
       "type": "function",
-      "position": 9,
+      "position": 16,
       "operations": [
         {
           "action": "set_variable_value",
@@ -2389,7 +4046,7 @@
     },
     {
       "type": "function",
-      "position": 10,
+      "position": 17,
       "operations": [
         {
           "action": "set_variable_value",
@@ -2412,27 +4069,293 @@
           ]
         },
         {
-          "action": "if_variable_map_has_key",
+          "action": "set_variable_value",
           "values": [
             {
-              "name": "key",
+              "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "plot_key",
+                "variable": "plot_x",
                 "scope": "local"
               }
             },
             {
-              "name": "map",
+              "name": "value",
               "value": {
                 "type": "variable",
-                "variable": "plot_owner",
+                "variable": "x",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "plot_z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "call_function",
+          "values": [
+            {
+              "name": "function_name",
+              "value": {
+                "type": "text",
+                "text": "get_plot_center"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "plot_x",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "plot_z",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "cx",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "result_x",
+                "scope": "game"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "cz",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "result_z",
+                "scope": "game"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_local(cx)-2)"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_local(cz)-2)"
+              }
+            }
+          ]
+        },
+        {
+          "action": "call_function",
+          "values": [
+            {
+              "name": "function_name",
+              "value": {
+                "type": "text",
+                "text": "is_within_borders"
+              }
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "number",
+                    "number": 1
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "is_within",
                 "scope": "game"
               }
             }
           ],
-          "is_inverted": true,
+          "is_inverted": false,
           "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "x",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": "%math(%var_local(cx)+2)"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "z",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": "%math(%var_local(cz)+2)"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "is_within_borders"
+                  }
+                }
+              ]
+            },
             {
               "action": "if_variable_equals",
               "values": [
@@ -2443,7 +4366,7 @@
                     "values": [
                       {
                         "type": "number",
-                        "number": 0
+                        "number": 1
                       },
                       {},
                       {},
@@ -2472,57 +4395,15 @@
                   "name": "value",
                   "value": {
                     "type": "variable",
-                    "variable": "given",
-                    "scope": "local"
+                    "variable": "is_within",
+                    "scope": "game"
                   }
                 }
               ],
               "is_inverted": false,
               "operations": [
                 {
-                  "action": "set_variable_value",
-                  "values": [
-                    {
-                      "name": "variable",
-                      "value": {
-                        "type": "variable",
-                        "variable": "%player%_plot_x",
-                        "scope": "game"
-                      }
-                    },
-                    {
-                      "name": "value",
-                      "value": {
-                        "type": "variable",
-                        "variable": "x",
-                        "scope": "local"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "action": "set_variable_value",
-                  "values": [
-                    {
-                      "name": "variable",
-                      "value": {
-                        "type": "variable",
-                        "variable": "%player%_plot_z",
-                        "scope": "game"
-                      }
-                    },
-                    {
-                      "name": "value",
-                      "value": {
-                        "type": "variable",
-                        "variable": "z",
-                        "scope": "local"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "action": "set_variable_set_map_value",
+                  "action": "if_variable_map_has_key",
                   "values": [
                     {
                       "name": "key",
@@ -2533,83 +4414,181 @@
                       }
                     },
                     {
-                      "name": "value",
-                      "value": {
-                        "type": "text",
-                        "text": "%player%"
-                      }
-                    },
-                    {
                       "name": "map",
                       "value": {
                         "type": "variable",
                         "variable": "plot_owner",
-                        "scope": "game"
-                      }
-                    },
-                    {
-                      "name": "variable",
-                      "value": {
-                        "type": "variable",
-                        "variable": "plot_owner",
-                        "scope": "game"
+                        "scope": "save"
                       }
                     }
-                  ]
-                },
-                {
-                  "action": "set_variable_set_map_value",
-                  "values": [
+                  ],
+                  "is_inverted": true,
+                  "operations": [
                     {
-                      "name": "key",
-                      "value": {
-                        "type": "variable",
-                        "variable": "plot_key",
-                        "scope": "local"
-                      }
-                    },
-                    {
-                      "name": "value",
-                      "value": {
-                        "type": "number",
-                        "number": 1
-                      }
-                    },
-                    {
-                      "name": "map",
-                      "value": {
-                        "type": "variable",
-                        "variable": "plot_floors",
-                        "scope": "game"
-                      }
-                    },
-                    {
-                      "name": "variable",
-                      "value": {
-                        "type": "variable",
-                        "variable": "plot_floors",
-                        "scope": "game"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "action": "set_variable_value",
-                  "values": [
-                    {
-                      "name": "variable",
-                      "value": {
-                        "type": "variable",
-                        "variable": "given",
-                        "scope": "local"
-                      }
-                    },
-                    {
-                      "name": "value",
-                      "value": {
-                        "type": "number",
-                        "number": 1
-                      }
+                      "action": "if_variable_equals",
+                      "values": [
+                        {
+                          "name": "compare",
+                          "value": {
+                            "type": "array",
+                            "values": [
+                              {
+                                "type": "number",
+                                "number": 0
+                              },
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {},
+                              {}
+                            ]
+                          }
+                        },
+                        {
+                          "name": "value",
+                          "value": {
+                            "type": "variable",
+                            "variable": "given",
+                            "scope": "local"
+                          }
+                        }
+                      ],
+                      "is_inverted": false,
+                      "operations": [
+                        {
+                          "action": "set_variable_value",
+                          "values": [
+                            {
+                              "name": "variable",
+                              "value": {
+                                "type": "variable",
+                                "variable": "%player%_plot_x",
+                                "scope": "save"
+                              }
+                            },
+                            {
+                              "name": "value",
+                              "value": {
+                                "type": "variable",
+                                "variable": "x",
+                                "scope": "local"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "action": "set_variable_value",
+                          "values": [
+                            {
+                              "name": "variable",
+                              "value": {
+                                "type": "variable",
+                                "variable": "%player%_plot_z",
+                                "scope": "save"
+                              }
+                            },
+                            {
+                              "name": "value",
+                              "value": {
+                                "type": "variable",
+                                "variable": "z",
+                                "scope": "local"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "action": "set_variable_value",
+                          "values": [
+                            {
+                              "name": "variable",
+                              "value": {
+                                "type": "variable",
+                                "variable": "%player%_has_plot",
+                                "scope": "save"
+                              }
+                            },
+                            {
+                              "name": "value",
+                              "value": {
+                                "type": "number",
+                                "number": 1
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "action": "set_variable_set_map_value",
+                          "values": [
+                            {
+                              "name": "key",
+                              "value": {
+                                "type": "variable",
+                                "variable": "plot_key",
+                                "scope": "local"
+                              }
+                            },
+                            {
+                              "name": "value",
+                              "value": {
+                                "type": "text",
+                                "text": "%player%"
+                              }
+                            },
+                            {
+                              "name": "map",
+                              "value": {
+                                "type": "variable",
+                                "variable": "plot_owner",
+                                "scope": "save"
+                              }
+                            },
+                            {
+                              "name": "variable",
+                              "value": {
+                                "type": "variable",
+                                "variable": "plot_owner",
+                                "scope": "save"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "action": "set_variable_value",
+                          "values": [
+                            {
+                              "name": "variable",
+                              "value": {
+                                "type": "variable",
+                                "variable": "given",
+                                "scope": "local"
+                              }
+                            },
+                            {
+                              "name": "value",
+                              "value": {
+                                "type": "number",
+                                "number": 1
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
@@ -2778,163 +4757,14 @@
               "is_inverted": false,
               "operations": [
                 {
-                  "action": "if_variable_equals",
+                  "action": "call_function",
                   "values": [
                     {
-                      "name": "compare",
+                      "name": "function_name",
                       "value": {
-                        "type": "array",
-                        "values": [
-                          {
-                            "type": "number",
-                            "number": 1
-                          },
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {},
-                          {}
-                        ]
+                        "type": "text",
+                        "text": "jmcc.f0"
                       }
-                    },
-                    {
-                      "name": "value",
-                      "value": {
-                        "type": "variable",
-                        "variable": "given",
-                        "scope": "local"
-                      }
-                    }
-                  ],
-                  "is_inverted": false,
-                  "operations": [
-                    {
-                      "action": "player_send_message",
-                      "values": [
-                        {
-                          "name": "messages",
-                          "value": {
-                            "type": "array",
-                            "values": [
-                              {
-                                "type": "text",
-                                "text": "&aВам выдан плот!"
-                              },
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {}
-                            ]
-                          }
-                        },
-                        {
-                          "name": "merging",
-                          "value": {
-                            "type": "enum",
-                            "enum": "SPACES"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "action": "call_function",
-                      "values": [
-                        {
-                          "name": "function_name",
-                          "value": {
-                            "type": "text",
-                            "text": "build_full_plot"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "action": "call_function",
-                      "values": [
-                        {
-                          "name": "function_name",
-                          "value": {
-                            "type": "text",
-                            "text": "teleport_to_plot"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "action": "else",
-                  "values": [],
-                  "is_inverted": false,
-                  "operations": [
-                    {
-                      "action": "player_send_message",
-                      "values": [
-                        {
-                          "name": "messages",
-                          "value": {
-                            "type": "array",
-                            "values": [
-                              {
-                                "type": "text",
-                                "text": "&cНет свободных плотов!"
-                              },
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {},
-                              {}
-                            ]
-                          }
-                        },
-                        {
-                          "name": "merging",
-                          "value": {
-                            "type": "enum",
-                            "enum": "SPACES"
-                          }
-                        }
-                      ]
                     }
                   ]
                 }
@@ -2947,8 +4777,158 @@
       "name": "check_z"
     },
     {
+      "type": "process",
+      "position": 18,
+      "operations": [
+        {
+          "action": "control_wait",
+          "values": [
+            {
+              "name": "duration",
+              "value": {
+                "type": "number",
+                "number": 20
+              }
+            },
+            {
+              "name": "time_unit",
+              "value": {
+                "type": "enum",
+                "enum": "TICKS"
+              }
+            }
+          ]
+        },
+        {
+          "action": "select_all_players",
+          "values": []
+        },
+        {
+          "action": "repeat_for_each_in_list",
+          "values": [
+            {
+              "name": "index_variable",
+              "value": {
+                "type": "variable",
+                "variable": "current_player",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "check_and_fix_player_position"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "check_other_plot"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "start_process",
+          "values": [
+            {
+              "name": "process_name",
+              "value": {
+                "type": "text",
+                "text": "position_checker"
+              }
+            },
+            {
+              "name": "local_variables_mode",
+              "value": {
+                "type": "enum",
+                "enum": "COPY"
+              }
+            },
+            {
+              "name": "target_mode",
+              "value": {
+                "type": "enum",
+                "enum": "CURRENT_TARGET"
+              }
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "position_checker"
+    },
+    {
+      "type": "process",
+      "position": 19,
+      "operations": [
+        {
+          "action": "control_wait",
+          "values": [
+            {
+              "name": "duration",
+              "value": {
+                "type": "number",
+                "number": 5
+              }
+            },
+            {
+              "name": "time_unit",
+              "value": {
+                "type": "enum",
+                "enum": "TICKS"
+              }
+            }
+          ]
+        },
+        {
+          "action": "start_process",
+          "values": [
+            {
+              "name": "process_name",
+              "value": {
+                "type": "text",
+                "text": "position_checker"
+              }
+            },
+            {
+              "name": "local_variables_mode",
+              "value": {
+                "type": "enum",
+                "enum": "COPY"
+              }
+            },
+            {
+              "name": "target_mode",
+              "value": {
+                "type": "enum",
+                "enum": "CURRENT_TARGET"
+              }
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "start_checker"
+    },
+    {
       "type": "event",
-      "position": 11,
+      "position": 20,
       "operations": [
         {
           "action": "player_send_message",
@@ -2960,7 +4940,89 @@
                 "values": [
                   {
                     "type": "text",
-                    "text": "&6🏝️ Добро пожаловать!"
+                    "text": "&6🏝️ Добро пожаловать в систему плотов!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&aИспользуйте &e@pl reset &aчтобы получить новый плот"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&a@pl tp &7- телепорт на плот"
                   },
                   {},
                   {},
@@ -3030,70 +5092,22 @@
               "name": "value",
               "value": {
                 "type": "variable",
-                "variable": "%player%_plot_x",
-                "scope": "game"
+                "variable": "%player%_has_plot",
+                "scope": "save"
               }
             }
           ],
           "is_inverted": false,
           "operations": [
             {
-              "action": "if_variable_equals",
+              "action": "call_function",
               "values": [
                 {
-                  "name": "compare",
+                  "name": "function_name",
                   "value": {
-                    "type": "array",
-                    "values": [
-                      {
-                        "type": "number",
-                        "number": 0
-                      },
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {},
-                      {}
-                    ]
+                    "type": "text",
+                    "text": "give_plot"
                   }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "variable",
-                    "variable": "%player%_plot_z",
-                    "scope": "game"
-                  }
-                }
-              ],
-              "is_inverted": false,
-              "operations": [
-                {
-                  "action": "call_function",
-                  "values": [
-                    {
-                      "name": "function_name",
-                      "value": {
-                        "type": "text",
-                        "text": "give_plot"
-                      }
-                    }
-                  ]
                 }
               ]
             }
@@ -3111,92 +5125,22 @@
                   "name": "function_name",
                   "value": {
                     "type": "text",
+                    "text": "load_player_plot"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
                     "text": "teleport_to_plot"
                   }
                 }
               ]
-            }
-          ]
-        },
-        {
-          "action": "player_send_message",
-          "values": [
-            {
-              "name": "messages",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "text",
-                    "text": "&a@plot &7- телепорт"
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {}
-                ]
-              }
-            },
-            {
-              "name": "merging",
-              "value": {
-                "type": "enum",
-                "enum": "SPACES"
-              }
-            }
-          ]
-        },
-        {
-          "action": "player_send_message",
-          "values": [
-            {
-              "name": "messages",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "text",
-                    "text": "&a@floor &7- построить этаж"
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {}
-                ]
-              }
-            },
-            {
-              "name": "merging",
-              "value": {
-                "type": "enum",
-                "enum": "SPACES"
-              }
             }
           ]
         }
@@ -3205,7 +5149,38 @@
     },
     {
       "type": "event",
-      "position": 12,
+      "position": 21,
+      "operations": [
+        {
+          "action": "call_function",
+          "values": [
+            {
+              "name": "function_name",
+              "value": {
+                "type": "text",
+                "text": "check_and_fix_player_position"
+              }
+            }
+          ]
+        },
+        {
+          "action": "call_function",
+          "values": [
+            {
+              "name": "function_name",
+              "value": {
+                "type": "text",
+                "text": "check_other_plot"
+              }
+            }
+          ]
+        }
+      ],
+      "event": "player_move"
+    },
+    {
+      "type": "event",
+      "position": 22,
       "operations": [
         {
           "action": "set_variable_value",
@@ -3238,7 +5213,7 @@
                 "values": [
                   {
                     "type": "text",
-                    "text": "@plot"
+                    "text": "@pl tp"
                   },
                   {},
                   {},
@@ -3302,7 +5277,7 @@
                 "values": [
                   {
                     "type": "text",
-                    "text": "@floor"
+                    "text": "@pl reset"
                   },
                   {},
                   {},
@@ -3349,7 +5324,7 @@
                   "name": "function_name",
                   "value": {
                     "type": "text",
-                    "text": "add_floor"
+                    "text": "give_plot"
                   }
                 }
               ]
@@ -3358,6 +5333,458 @@
         }
       ],
       "event": "player_chat"
+    },
+    {
+      "type": "event",
+      "position": 23,
+      "operations": [
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "msg",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "game_value",
+                "game_value": "event_chat_message",
+                "selection": "{\"type\":\"default\"}"
+              }
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "@pl resetall"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "msg",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "game_cancel_event",
+              "values": []
+            },
+            {
+              "action": "if_player_has_privilege",
+              "values": [
+                {
+                  "name": "privilege",
+                  "value": {
+                    "type": "enum",
+                    "enum": "DEVELOPER"
+                  }
+                },
+                {
+                  "name": "exact",
+                  "value": {
+                    "type": "enum",
+                    "enum": "TRUE"
+                  }
+                }
+              ],
+              "is_inverted": false,
+              "operations": [
+                {
+                  "action": "call_function",
+                  "values": [
+                    {
+                      "name": "function_name",
+                      "value": {
+                        "type": "text",
+                        "text": "reset_all_plots"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "action": "player_send_message",
+                  "values": [
+                    {
+                      "name": "messages",
+                      "value": {
+                        "type": "array",
+                        "values": [
+                          {
+                            "type": "text",
+                            "text": "&aВы сбросили все плоты!"
+                          },
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {}
+                        ]
+                      }
+                    },
+                    {
+                      "name": "merging",
+                      "value": {
+                        "type": "enum",
+                        "enum": "SPACES"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "action": "else",
+              "values": [],
+              "is_inverted": false,
+              "operations": [
+                {
+                  "action": "player_send_message",
+                  "values": [
+                    {
+                      "name": "messages",
+                      "value": {
+                        "type": "array",
+                        "values": [
+                          {
+                            "type": "text",
+                            "text": "&cНет прав!"
+                          },
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {}
+                        ]
+                      }
+                    },
+                    {
+                      "name": "merging",
+                      "value": {
+                        "type": "enum",
+                        "enum": "SPACES"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "event": "player_chat"
+    },
+    {
+      "type": "function",
+      "position": 24,
+      "operations": [
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "number",
+                    "number": 1
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "given",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "player_send_message",
+              "values": [
+                {
+                  "name": "messages",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": "&aВам выдан новый плот!"
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                {
+                  "name": "merging",
+                  "value": {
+                    "type": "enum",
+                    "enum": "SPACES"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "build_plot"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "teleport_to_plot"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "else",
+          "values": [],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "player_send_message",
+              "values": [
+                {
+                  "name": "messages",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": "&cНет свободных плотов в пределах границ!"
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                {
+                  "name": "merging",
+                  "value": {
+                    "type": "enum",
+                    "enum": "SPACES"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "if_variable_equals",
+              "values": [
+                {
+                  "name": "compare",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "number",
+                        "number": 1
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "old_has_plot",
+                    "scope": "local"
+                  }
+                }
+              ],
+              "is_inverted": false,
+              "operations": [
+                {
+                  "action": "set_variable_value",
+                  "values": [
+                    {
+                      "name": "variable",
+                      "value": {
+                        "type": "variable",
+                        "variable": "%player%_has_plot",
+                        "scope": "save"
+                      }
+                    },
+                    {
+                      "name": "value",
+                      "value": {
+                        "type": "number",
+                        "number": 1
+                      }
+                    }
+                  ]
+                },
+                {
+                  "action": "call_function",
+                  "values": [
+                    {
+                      "name": "function_name",
+                      "value": {
+                        "type": "text",
+                        "text": "load_player_plot"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "jmcc.f0"
     }
   ]
 }
