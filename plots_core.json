@@ -1561,7 +1561,7 @@
                     "values": [
                       {
                         "type": "text",
-                        "text": "&cУ вас нет плота! Используйте @pl reset"
+                        "text": "&cУ вас нет плота! Создаю новый..."
                       },
                       {},
                       {},
@@ -1595,6 +1595,18 @@
             {
               "action": "control_return_function",
               "values": []
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "give_plot"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -2779,7 +2791,7 @@
                 "values": [
                   {
                     "type": "text",
-                    "text": "&aИспользуйте &e@pl reset &aчтобы получить новый плот!"
+                    "text": "&aВход в игру создаст новый плот автоматически!"
                   },
                   {},
                   {},
@@ -4981,7 +4993,7 @@
                 "values": [
                   {
                     "type": "text",
-                    "text": "&aИспользуйте &e@pl reset &aчтобы получить новый плот"
+                    "text": "&a@pl tp &7- телепорт на плот"
                   },
                   {},
                   {},
@@ -5022,7 +5034,7 @@
                 "values": [
                   {
                     "type": "text",
-                    "text": "&a@pl tp &7- телепорт на плот"
+                    "text": "&a@pl reset &7- получить новый плот"
                   },
                   {},
                   {},
@@ -5099,6 +5111,47 @@
           ],
           "is_inverted": false,
           "operations": [
+            {
+              "action": "player_send_message",
+              "values": [
+                {
+                  "name": "messages",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": "&aУ вас нет плота! Создаю новый..."
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                {
+                  "name": "merging",
+                  "value": {
+                    "type": "enum",
+                    "enum": "SPACES"
+                  }
+                }
+              ]
+            },
             {
               "action": "call_function",
               "values": [
