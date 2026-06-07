@@ -1,0 +1,3593 @@
+{
+  "handlers": [
+    {
+      "type": "event",
+      "position": 0,
+      "operations": [
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_class",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "text",
+                "text": ""
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_kills",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_deaths",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_in_game",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "arena_min_x",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": -30
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "arena_max_x",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 30
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "arena_min_z",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": -30
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "arena_max_z",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 30
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "arena_y_level",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": 64
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_create_list",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "class_menu",
+                "scope": "game"
+              }
+            },
+            {
+              "name": "values",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "item",
+                    "item": "{\"id\":\"iron_sword\",\"tag\":{\"display\":{\"Name\":\"{\\\"text\\\":\\\"Воин\\\",\\\"color\\\":\\\"red\\\",\\\"italic\\\":false}\",\"Lore\":[\"{\\\"text\\\":\\\"❤️ Здоровье: 40\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"⚔️ Урон: 8\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"🏃 Скорость: Средняя\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"🛡️ Броня: Железо\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\"]}},\"Count\":1}"
+                  },
+                  {
+                    "type": "item",
+                    "item": "{\"id\":\"bow\",\"tag\":{\"display\":{\"Name\":\"{\\\"text\\\":\\\"Лучник\\\",\\\"color\\\":\\\"green\\\",\\\"italic\\\":false}\",\"Lore\":[\"{\\\"text\\\":\\\"❤️ Здоровье: 30\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"⚔️ Урон: 6 (дальний)\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"🏃 Скорость: Высокая\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"🛡️ Броня: Кожа\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\"]}},\"Count\":1}"
+                  },
+                  {
+                    "type": "item",
+                    "item": "{\"id\":\"blaze_rod\",\"tag\":{\"display\":{\"Name\":\"{\\\"text\\\":\\\"Маг\\\",\\\"color\\\":\\\"aqua\\\",\\\"italic\\\":false}\",\"Lore\":[\"{\\\"text\\\":\\\"❤️ Здоровье: 25\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"⚔️ Урон: 10 (магия)\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"🏃 Скорость: Очень высокая\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"🛡️ Броня: Золото\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\"]}},\"Count\":1}"
+                  },
+                  {
+                    "type": "item",
+                    "item": "{\"id\":\"shield\",\"tag\":{\"display\":{\"Name\":\"{\\\"text\\\":\\\"Танк\\\",\\\"color\\\":\\\"gold\\\",\\\"italic\\\":false}\",\"Lore\":[\"{\\\"text\\\":\\\"❤️ Здоровье: 60\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"⚔️ Урон: 5\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"🏃 Скорость: Низкая\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"🛡️ Броня: Алмаз\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\"]}},\"Count\":1}"
+                  },
+                  {
+                    "type": "item",
+                    "item": "{\"id\":\"diamond_sword\",\"tag\":{\"display\":{\"Name\":\"{\\\"text\\\":\\\"Ассасин\\\",\\\"color\\\":\\\"dark_gray\\\",\\\"italic\\\":false}\",\"Lore\":[\"{\\\"text\\\":\\\"❤️ Здоровье: 35\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"⚔️ Урон: 12\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"🏃 Скорость: Очень высокая\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\",\"{\\\"text\\\":\\\"🛡️ Броня: Кольчуга\\\",\\\"color\\\":\\\"gray\\\",\\\"italic\\\":false}\"]}},\"Count\":1}"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "game_value",
+                "game_value": "event_block_location",
+                "selection": "{\"type\":\"default\"}"
+              }
+            }
+          ]
+        }
+      ],
+      "event": "world_start"
+    },
+    {
+      "type": "function",
+      "position": 1,
+      "operations": [
+        {
+          "action": "player_show_inventory_menu",
+          "values": [
+            {
+              "name": "items",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "variable",
+                    "variable": "class_menu",
+                    "scope": "game"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "name",
+              "value": {
+                "type": "text",
+                "text": "Выберите класс"
+              }
+            },
+            {
+              "name": "inventory_type",
+              "value": {
+                "type": "enum",
+                "enum": "CHEST"
+              }
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "show_class_menu"
+    },
+    {
+      "type": "function",
+      "position": 2,
+      "operations": [
+        {
+          "action": "player_clear_inventory",
+          "values": [
+            {
+              "name": "clear_mode",
+              "value": {
+                "type": "enum",
+                "enum": "ENTIRE"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_armor",
+          "values": [
+            {
+              "name": "helmet",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"iron_helmet\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "chestplate",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"iron_chestplate\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "leggings",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"iron_leggings\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "boots",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"iron_boots\",\"Count\":1}"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_give_items",
+          "values": [
+            {
+              "name": "items",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "item",
+                    "item": "{\"id\":\"iron_sword\",\"Count\":1}"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_health",
+          "values": [
+            {
+              "name": "health",
+              "value": {
+                "type": "number",
+                "number": 40
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_max_health",
+          "values": [
+            {
+              "name": "health",
+              "value": {
+                "type": "number",
+                "number": 40
+              }
+            },
+            {
+              "name": "heal",
+              "value": {
+                "type": "enum",
+                "enum": "TRUE"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_movement_speed",
+          "values": [
+            {
+              "name": "distance",
+              "value": {
+                "type": "number",
+                "number": 0.25
+              }
+            },
+            {
+              "name": "movement_type",
+              "value": {
+                "type": "enum",
+                "enum": "WALK"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&aВы выбрали класс &cВоин&a!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "give_warrior_gear"
+    },
+    {
+      "type": "function",
+      "position": 3,
+      "operations": [
+        {
+          "action": "player_clear_inventory",
+          "values": [
+            {
+              "name": "clear_mode",
+              "value": {
+                "type": "enum",
+                "enum": "ENTIRE"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_armor",
+          "values": [
+            {
+              "name": "helmet",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"leather_helmet\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "chestplate",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"leather_chestplate\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "leggings",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"leather_leggings\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "boots",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"leather_boots\",\"Count\":1}"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_give_items",
+          "values": [
+            {
+              "name": "items",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "item",
+                    "item": "{\"id\":\"bow\",\"Count\":1}"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_give_items",
+          "values": [
+            {
+              "name": "items",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "item",
+                    "item": "{\"id\":\"arrow\",\"Count\":64}"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_health",
+          "values": [
+            {
+              "name": "health",
+              "value": {
+                "type": "number",
+                "number": 30
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_max_health",
+          "values": [
+            {
+              "name": "health",
+              "value": {
+                "type": "number",
+                "number": 30
+              }
+            },
+            {
+              "name": "heal",
+              "value": {
+                "type": "enum",
+                "enum": "TRUE"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_movement_speed",
+          "values": [
+            {
+              "name": "distance",
+              "value": {
+                "type": "number",
+                "number": 0.28
+              }
+            },
+            {
+              "name": "movement_type",
+              "value": {
+                "type": "enum",
+                "enum": "WALK"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&aВы выбрали класс &aЛучник&a!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "give_archer_gear"
+    },
+    {
+      "type": "function",
+      "position": 4,
+      "operations": [
+        {
+          "action": "player_clear_inventory",
+          "values": [
+            {
+              "name": "clear_mode",
+              "value": {
+                "type": "enum",
+                "enum": "ENTIRE"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_armor",
+          "values": [
+            {
+              "name": "helmet",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"golden_helmet\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "chestplate",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"golden_chestplate\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "leggings",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"golden_leggings\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "boots",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"golden_boots\",\"Count\":1}"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_give_items",
+          "values": [
+            {
+              "name": "items",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "item",
+                    "item": "{\"id\":\"blaze_rod\",\"Count\":1}"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_health",
+          "values": [
+            {
+              "name": "health",
+              "value": {
+                "type": "number",
+                "number": 25
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_max_health",
+          "values": [
+            {
+              "name": "health",
+              "value": {
+                "type": "number",
+                "number": 25
+              }
+            },
+            {
+              "name": "heal",
+              "value": {
+                "type": "enum",
+                "enum": "TRUE"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_movement_speed",
+          "values": [
+            {
+              "name": "distance",
+              "value": {
+                "type": "number",
+                "number": 0.3
+              }
+            },
+            {
+              "name": "movement_type",
+              "value": {
+                "type": "enum",
+                "enum": "WALK"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&aВы выбрали класс &bМаг&a!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "give_mage_gear"
+    },
+    {
+      "type": "function",
+      "position": 5,
+      "operations": [
+        {
+          "action": "player_clear_inventory",
+          "values": [
+            {
+              "name": "clear_mode",
+              "value": {
+                "type": "enum",
+                "enum": "ENTIRE"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_armor",
+          "values": [
+            {
+              "name": "helmet",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"diamond_helmet\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "chestplate",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"diamond_chestplate\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "leggings",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"diamond_leggings\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "boots",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"diamond_boots\",\"Count\":1}"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_give_items",
+          "values": [
+            {
+              "name": "items",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "item",
+                    "item": "{\"id\":\"stone_sword\",\"Count\":1}"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_health",
+          "values": [
+            {
+              "name": "health",
+              "value": {
+                "type": "number",
+                "number": 60
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_max_health",
+          "values": [
+            {
+              "name": "health",
+              "value": {
+                "type": "number",
+                "number": 60
+              }
+            },
+            {
+              "name": "heal",
+              "value": {
+                "type": "enum",
+                "enum": "TRUE"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_movement_speed",
+          "values": [
+            {
+              "name": "distance",
+              "value": {
+                "type": "number",
+                "number": 0.2
+              }
+            },
+            {
+              "name": "movement_type",
+              "value": {
+                "type": "enum",
+                "enum": "WALK"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&aВы выбрали класс &6Танк&a!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "give_tank_gear"
+    },
+    {
+      "type": "function",
+      "position": 6,
+      "operations": [
+        {
+          "action": "player_clear_inventory",
+          "values": [
+            {
+              "name": "clear_mode",
+              "value": {
+                "type": "enum",
+                "enum": "ENTIRE"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_armor",
+          "values": [
+            {
+              "name": "helmet",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"chainmail_helmet\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "chestplate",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"chainmail_chestplate\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "leggings",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"chainmail_leggings\",\"Count\":1}"
+              }
+            },
+            {
+              "name": "boots",
+              "value": {
+                "type": "item",
+                "item": "{\"id\":\"chainmail_boots\",\"Count\":1}"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_give_items",
+          "values": [
+            {
+              "name": "items",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "item",
+                    "item": "{\"id\":\"diamond_sword\",\"Count\":1}"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_health",
+          "values": [
+            {
+              "name": "health",
+              "value": {
+                "type": "number",
+                "number": 35
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_max_health",
+          "values": [
+            {
+              "name": "health",
+              "value": {
+                "type": "number",
+                "number": 35
+              }
+            },
+            {
+              "name": "heal",
+              "value": {
+                "type": "enum",
+                "enum": "TRUE"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_movement_speed",
+          "values": [
+            {
+              "name": "distance",
+              "value": {
+                "type": "number",
+                "number": 0.35
+              }
+            },
+            {
+              "name": "movement_type",
+              "value": {
+                "type": "enum",
+                "enum": "WALK"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&aВы выбрали класс &8Ассасин&a!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "give_assassin_gear"
+    },
+    {
+      "type": "function",
+      "position": 7,
+      "operations": [
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "warrior"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_class",
+                "scope": "save"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "give_warrior_gear"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "control_return_function",
+              "values": []
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "archer"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_class",
+                "scope": "save"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "give_archer_gear"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "control_return_function",
+              "values": []
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "mage"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_class",
+                "scope": "save"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "give_mage_gear"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "control_return_function",
+              "values": []
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "tank"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_class",
+                "scope": "save"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "give_tank_gear"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "control_return_function",
+              "values": []
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "assassin"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_class",
+                "scope": "save"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "give_assassin_gear"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "control_return_function",
+              "values": []
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "give_class_gear"
+    },
+    {
+      "type": "function",
+      "position": 8,
+      "operations": [
+        {
+          "action": "set_variable_random_number",
+          "values": [
+            {
+              "name": "min",
+              "value": {
+                "type": "variable",
+                "variable": "arena_min_x",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "max",
+              "value": {
+                "type": "variable",
+                "variable": "arena_max_x",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "integer",
+              "value": {
+                "type": "enum",
+                "enum": "TRUE"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "random_x",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_random_number",
+          "values": [
+            {
+              "name": "min",
+              "value": {
+                "type": "variable",
+                "variable": "arena_min_z",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "max",
+              "value": {
+                "type": "variable",
+                "variable": "arena_max_z",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "integer",
+              "value": {
+                "type": "enum",
+                "enum": "TRUE"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "random_z",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_set_all_coordinates",
+          "values": [
+            {
+              "name": "x",
+              "value": {
+                "type": "variable",
+                "variable": "random_x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "y",
+              "value": {
+                "type": "variable",
+                "variable": "arena_y_level",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "type": "variable",
+                "variable": "random_z",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "loc",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_teleport",
+          "values": [
+            {
+              "name": "location",
+              "value": {
+                "type": "variable",
+                "variable": "loc",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "keep_rotation",
+              "value": {
+                "type": "enum",
+                "enum": "FALSE"
+              }
+            },
+            {
+              "name": "keep_velocity",
+              "value": {
+                "type": "enum",
+                "enum": "FALSE"
+              }
+            },
+            {
+              "name": "ignore_passengers",
+              "value": {
+                "type": "enum",
+                "enum": "FALSE"
+              }
+            },
+            {
+              "name": "dismount",
+              "value": {
+                "type": "enum",
+                "enum": "TRUE"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&aВы телепортированы на арену!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "teleport_to_arena"
+    },
+    {
+      "type": "function",
+      "position": 9,
+      "operations": [
+        {
+          "action": "if_variable_greater_or_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "variable",
+                "variable": "arena_min_x",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "x",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "if_variable_less_or_equals",
+              "values": [
+                {
+                  "name": "compare",
+                  "value": {
+                    "type": "variable",
+                    "variable": "arena_max_x",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "x",
+                    "scope": "local"
+                  }
+                }
+              ],
+              "is_inverted": false,
+              "operations": [
+                {
+                  "action": "if_variable_greater_or_equals",
+                  "values": [
+                    {
+                      "name": "compare",
+                      "value": {
+                        "type": "variable",
+                        "variable": "arena_min_z",
+                        "scope": "save"
+                      }
+                    },
+                    {
+                      "name": "value",
+                      "value": {
+                        "type": "variable",
+                        "variable": "z",
+                        "scope": "local"
+                      }
+                    }
+                  ],
+                  "is_inverted": false,
+                  "operations": [
+                    {
+                      "action": "if_variable_less_or_equals",
+                      "values": [
+                        {
+                          "name": "compare",
+                          "value": {
+                            "type": "variable",
+                            "variable": "arena_max_z",
+                            "scope": "save"
+                          }
+                        },
+                        {
+                          "name": "value",
+                          "value": {
+                            "type": "variable",
+                            "variable": "z",
+                            "scope": "local"
+                          }
+                        }
+                      ],
+                      "is_inverted": false,
+                      "operations": [
+                        {
+                          "action": "game_cancel_event",
+                          "values": []
+                        },
+                        {
+                          "action": "player_send_message",
+                          "values": [
+                            {
+                              "name": "messages",
+                              "value": {
+                                "type": "array",
+                                "values": [
+                                  {
+                                    "type": "text",
+                                    "text": "&cНельзя это делать на арене!"
+                                  },
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {},
+                                  {}
+                                ]
+                              }
+                            },
+                            {
+                              "name": "merging",
+                              "value": {
+                                "type": "enum",
+                                "enum": "SPACES"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "is_in_arena"
+    },
+    {
+      "type": "event",
+      "position": 10,
+      "operations": [
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&6⚔️ Добро пожаловать в PvP игру!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&aВыберите класс в меню!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&a@class &7- выбрать класс"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&a@arena &7- телепорт на арену"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&a@stats &7- показать статистику"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": ""
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "%player%_class",
+                "scope": "save"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "show_class_menu"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "else",
+          "values": [],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "give_class_gear"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "teleport_to_arena"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "event": "player_join"
+    },
+    {
+      "type": "event",
+      "position": 11,
+      "operations": [
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "item",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "game_value",
+                "game_value": "event_item",
+                "selection": "{\"type\":\"default\"}"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_get_item_type",
+          "values": [
+            {
+              "name": "type",
+              "value": {
+                "type": "variable",
+                "variable": "item",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "enum",
+                "enum": "ID"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "item_type",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "iron_sword"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "item_type",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_class",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "text",
+                    "text": "warrior"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_close_inventory",
+              "values": []
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "give_warrior_gear"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "teleport_to_arena"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_in_game",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "bow"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "item_type",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_class",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "text",
+                    "text": "archer"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_close_inventory",
+              "values": []
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "give_archer_gear"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "teleport_to_arena"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_in_game",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "blaze_rod"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "item_type",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_class",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "text",
+                    "text": "mage"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_close_inventory",
+              "values": []
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "give_mage_gear"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "teleport_to_arena"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_in_game",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "shield"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "item_type",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_class",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "text",
+                    "text": "tank"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_close_inventory",
+              "values": []
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "give_tank_gear"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "teleport_to_arena"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_in_game",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "diamond_sword"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "item_type",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_class",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "text",
+                    "text": "assassin"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_close_inventory",
+              "values": []
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "give_assassin_gear"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "teleport_to_arena"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_in_game",
+                    "scope": "save"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": 1
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "event": "player_click_inventory"
+    },
+    {
+      "type": "event",
+      "position": 12,
+      "operations": [
+        {
+          "action": "select_event_target",
+          "values": [
+            {
+              "name": "selection_type",
+              "value": {
+                "type": "enum",
+                "enum": "KILLER"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "%killer%_kills",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_save(%killer%_kills)+1)"
+              }
+            }
+          ]
+        },
+        {
+          "action": "select_event_target",
+          "values": [
+            {
+              "name": "selection_type",
+              "value": {
+                "type": "enum",
+                "enum": "VICTIM"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "%victim%_deaths",
+                "scope": "save"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math(%var_save(%victim%_deaths)+1)"
+              }
+            }
+          ]
+        }
+      ],
+      "event": "player_death"
+    },
+    {
+      "type": "event",
+      "position": 13,
+      "operations": [
+        {
+          "action": "control_wait",
+          "values": [
+            {
+              "name": "duration",
+              "value": {
+                "type": "number",
+                "number": 20
+              }
+            },
+            {
+              "name": "time_unit",
+              "value": {
+                "type": "enum",
+                "enum": "TICKS"
+              }
+            }
+          ]
+        },
+        {
+          "action": "call_function",
+          "values": [
+            {
+              "name": "function_name",
+              "value": {
+                "type": "text",
+                "text": "give_class_gear"
+              }
+            }
+          ]
+        },
+        {
+          "action": "call_function",
+          "values": [
+            {
+              "name": "function_name",
+              "value": {
+                "type": "text",
+                "text": "teleport_to_arena"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_set_invulnerability_ticks",
+          "values": [
+            {
+              "name": "ticks",
+              "value": {
+                "type": "number",
+                "number": 40
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&aВы возродились на арене!"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        }
+      ],
+      "event": "player_respawn"
+    },
+    {
+      "type": "event",
+      "position": 14,
+      "operations": [
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "msg",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "game_value",
+                "game_value": "event_chat_message",
+                "selection": "{\"type\":\"default\"}"
+              }
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "@class"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "msg",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "game_cancel_event",
+              "values": []
+            },
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "show_class_menu"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "@arena"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "msg",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "game_cancel_event",
+              "values": []
+            },
+            {
+              "action": "if_variable_equals",
+              "values": [
+                {
+                  "name": "compare",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": ""
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "variable",
+                    "variable": "%player%_class",
+                    "scope": "save"
+                  }
+                }
+              ],
+              "is_inverted": true,
+              "operations": [
+                {
+                  "action": "call_function",
+                  "values": [
+                    {
+                      "name": "function_name",
+                      "value": {
+                        "type": "text",
+                        "text": "teleport_to_arena"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "action": "else",
+              "values": [],
+              "is_inverted": false,
+              "operations": [
+                {
+                  "action": "player_send_message",
+                  "values": [
+                    {
+                      "name": "messages",
+                      "value": {
+                        "type": "array",
+                        "values": [
+                          {
+                            "type": "text",
+                            "text": "&cСначала выберите класс! @class"
+                          },
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {},
+                          {}
+                        ]
+                      }
+                    },
+                    {
+                      "name": "merging",
+                      "value": {
+                        "type": "enum",
+                        "enum": "SPACES"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "action": "if_variable_equals",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "@stats"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "msg",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "game_cancel_event",
+              "values": []
+            },
+            {
+              "action": "set_variable_value",
+              "values": [
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "kd",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "value",
+                  "value": {
+                    "type": "number",
+                    "number": "%math(%var_save(%player%_kills)/(%var_save(%player%_deaths)+1))"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "set_variable_round",
+              "values": [
+                {
+                  "name": "precision",
+                  "value": {
+                    "type": "number",
+                    "number": 1
+                  }
+                },
+                {
+                  "name": "round_type",
+                  "value": {
+                    "type": "enum",
+                    "enum": "ROUND"
+                  }
+                },
+                {
+                  "name": "number",
+                  "value": {
+                    "type": "variable",
+                    "variable": "kd",
+                    "scope": "local"
+                  }
+                },
+                {
+                  "name": "variable",
+                  "value": {
+                    "type": "variable",
+                    "variable": "kd",
+                    "scope": "local"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_send_message",
+              "values": [
+                {
+                  "name": "messages",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": "&6=== СТАТИСТИКА ==="
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                {
+                  "name": "merging",
+                  "value": {
+                    "type": "enum",
+                    "enum": "SPACES"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_send_message",
+              "values": [
+                {
+                  "name": "messages",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": "&cУбийств: %player%_kills"
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                {
+                  "name": "merging",
+                  "value": {
+                    "type": "enum",
+                    "enum": "SPACES"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_send_message",
+              "values": [
+                {
+                  "name": "messages",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": "&eСмертей: %player%_deaths"
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                {
+                  "name": "merging",
+                  "value": {
+                    "type": "enum",
+                    "enum": "SPACES"
+                  }
+                }
+              ]
+            },
+            {
+              "action": "player_send_message",
+              "values": [
+                {
+                  "name": "messages",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "text",
+                        "text": "&aK/D: %var_local(kd)"
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
+                {
+                  "name": "merging",
+                  "value": {
+                    "type": "enum",
+                    "enum": "SPACES"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "event": "player_chat"
+    },
+    {
+      "type": "event",
+      "position": 15,
+      "operations": [
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "game_value",
+                "game_value": "event_block_location",
+                "selection": "{\"type\":\"default\"}"
+              }
+            }
+          ]
+        }
+      ],
+      "event": "player_place_block"
+    }
+  ]
+}
