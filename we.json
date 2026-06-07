@@ -1731,14 +1731,6 @@
           "action": "set_variable_create_list",
           "values": [
             {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "batch",
-                "scope": "local"
-              }
-            },
-            {
               "name": "values",
               "value": {
                 "type": "array",
@@ -1766,25 +1758,13 @@
                   {}
                 ]
               }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "batch_count",
-                "scope": "local"
-              }
             },
             {
-              "name": "value",
+              "name": "variable",
               "value": {
-                "type": "number",
-                "number": 0
+                "type": "variable",
+                "variable": "batch",
+                "scope": "local"
               }
             }
           ]
@@ -1796,7 +1776,7 @@
               "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "placed",
+                "variable": "placed_total",
                 "scope": "local"
               }
             },
@@ -1843,13 +1823,34 @@
           ]
         },
         {
+          "action": "set_variable_get_list_length",
+          "values": [
+            {
+              "name": "list",
+              "value": {
+                "type": "variable",
+                "variable": "batch",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "batch_size",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
           "action": "set_variable_value",
           "values": [
             {
               "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "batch_index",
+                "variable": "index",
                 "scope": "local"
               }
             },
@@ -1869,7 +1870,7 @@
               "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "batch_size",
+                "variable": "chunk",
                 "scope": "local"
               }
             },
@@ -1883,37 +1884,34 @@
           ]
         },
         {
-          "action": "if_variable_greater",
+          "action": "set_variable_value",
           "values": [
             {
-              "name": "compare",
+              "name": "variable",
               "value": {
-                "type": "number",
-                "number": 0
+                "type": "variable",
+                "variable": "placed",
+                "scope": "local"
               }
             },
             {
               "name": "value",
               "value": {
-                "type": "variable",
-                "variable": "batch_count",
-                "scope": "local"
+                "type": "number",
+                "number": 0
               }
             }
-          ],
-          "is_inverted": false,
-          "operations": [
+          ]
+        },
+        {
+          "action": "call_function",
+          "values": [
             {
-              "action": "call_function",
-              "values": [
-                {
-                  "name": "function_name",
-                  "value": {
-                    "type": "text",
-                    "text": "place_batch"
-                  }
-                }
-              ]
+              "name": "function_name",
+              "value": {
+                "type": "text",
+                "text": "jmcc.f0"
+              }
             }
           ]
         }
@@ -2045,58 +2043,47 @@
           ]
         },
         {
-          "action": "set_variable_set_list_value",
+          "action": "set_variable_append_value",
           "values": [
+            {
+              "name": "values",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "variable",
+                    "variable": "loc",
+                    "scope": "local"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
             {
               "name": "variable",
               "value": {
                 "type": "variable",
                 "variable": "batch",
                 "scope": "local"
-              }
-            },
-            {
-              "name": "list",
-              "value": {
-                "type": "variable",
-                "variable": "batch",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "number",
-              "value": {
-                "type": "variable",
-                "variable": "batch_count",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "loc",
-                "scope": "local"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "batch_count",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "number",
-                "number": "%math(%var_local(batch_count)+1)"
               }
             }
           ]
@@ -2306,7 +2293,7 @@
               "name": "value",
               "value": {
                 "type": "number",
-                "number": "%math(%var_local(batch_index)+%var_local(batch_size))"
+                "number": "%math(%var_local(index)+%var_local(chunk))"
               }
             }
           ]
@@ -2318,7 +2305,7 @@
               "name": "compare",
               "value": {
                 "type": "variable",
-                "variable": "batch_count",
+                "variable": "batch_size",
                 "scope": "local"
               }
             },
@@ -2348,7 +2335,7 @@
                   "name": "value",
                   "value": {
                     "type": "variable",
-                    "variable": "batch_count",
+                    "variable": "batch_size",
                     "scope": "local"
                   }
                 }
@@ -2371,7 +2358,7 @@
               "name": "value",
               "value": {
                 "type": "variable",
-                "variable": "batch_index",
+                "variable": "index",
                 "scope": "local"
               }
             }
@@ -2423,10 +2410,10 @@
               "action": "set_variable_get_list_value",
               "values": [
                 {
-                  "name": "variable",
+                  "name": "number",
                   "value": {
                     "type": "variable",
-                    "variable": "loc",
+                    "variable": "i",
                     "scope": "local"
                   }
                 },
@@ -2439,10 +2426,10 @@
                   }
                 },
                 {
-                  "name": "number",
+                  "name": "variable",
                   "value": {
                     "type": "variable",
-                    "variable": "i",
+                    "variable": "loc",
                     "scope": "local"
                   }
                 }
@@ -2573,7 +2560,7 @@
                   "name": "variable",
                   "value": {
                     "type": "variable",
-                    "variable": "jmcc.29",
+                    "variable": "jmcc.31",
                     "scope": "local"
                   }
                 },
@@ -2625,7 +2612,7 @@
                   "name": "list",
                   "value": {
                     "type": "variable",
-                    "variable": "jmcc.29",
+                    "variable": "jmcc.31",
                     "scope": "local"
                   }
                 },
@@ -2640,7 +2627,7 @@
                   "name": "variable",
                   "value": {
                     "type": "variable",
-                    "variable": "jmcc.30",
+                    "variable": "jmcc.32",
                     "scope": "local"
                   }
                 }
@@ -2656,7 +2643,7 @@
                     "values": [
                       {
                         "type": "variable",
-                        "variable": "jmcc.30",
+                        "variable": "jmcc.32",
                         "scope": "local"
                       },
                       {},
@@ -2695,7 +2682,7 @@
                   "name": "variable",
                   "value": {
                     "type": "variable",
-                    "variable": "batch_index",
+                    "variable": "index",
                     "scope": "local"
                   }
                 },
@@ -2716,7 +2703,7 @@
                   "name": "compare",
                   "value": {
                     "type": "variable",
-                    "variable": "batch_count",
+                    "variable": "batch_size",
                     "scope": "local"
                   }
                 },
@@ -2724,7 +2711,7 @@
                   "name": "value",
                   "value": {
                     "type": "variable",
-                    "variable": "batch_index",
+                    "variable": "index",
                     "scope": "local"
                   }
                 }
@@ -2776,7 +2763,7 @@
                       "name": "variable",
                       "value": {
                         "type": "variable",
-                        "variable": "jmcc.31",
+                        "variable": "jmcc.33",
                         "scope": "local"
                       }
                     },
@@ -2828,7 +2815,7 @@
                       "name": "list",
                       "value": {
                         "type": "variable",
-                        "variable": "jmcc.31",
+                        "variable": "jmcc.33",
                         "scope": "local"
                       }
                     },
@@ -2843,7 +2830,7 @@
                       "name": "variable",
                       "value": {
                         "type": "variable",
-                        "variable": "jmcc.32",
+                        "variable": "jmcc.34",
                         "scope": "local"
                       }
                     }
@@ -2859,7 +2846,7 @@
                         "values": [
                           {
                             "type": "variable",
-                            "variable": "jmcc.32",
+                            "variable": "jmcc.34",
                             "scope": "local"
                           },
                           {},
@@ -3052,234 +3039,39 @@
           "action": "set_variable_create_list",
           "values": [
             {
+              "name": "values",
+              "value": {
+                "type": "array",
+                "values": [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
               "name": "variable",
               "value": {
                 "type": "variable",
                 "variable": "batch",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "values",
-              "value": {
-                "type": "array",
-                "values": [
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {}
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "batch_count",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "number",
-                "number": 0
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_create_list",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "jmcc.36",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "values",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "text",
-                    "text": "&aСоздаю сферу радиусом &e"
-                  },
-                  {
-                    "type": "variable",
-                    "variable": "rad",
-                    "scope": "local"
-                  },
-                  {
-                    "type": "text",
-                    "text": "..."
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {}
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_join_text",
-          "values": [
-            {
-              "name": "list",
-              "value": {
-                "type": "variable",
-                "variable": "jmcc.36",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "separator",
-              "value": {
-                "type": "text",
-                "text": ""
-              }
-            },
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "jmcc.37",
-                "scope": "local"
-              }
-            }
-          ]
-        },
-        {
-          "action": "player_send_message",
-          "values": [
-            {
-              "name": "messages",
-              "value": {
-                "type": "array",
-                "values": [
-                  {
-                    "type": "variable",
-                    "variable": "jmcc.37",
-                    "scope": "local"
-                  },
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {},
-                  {}
-                ]
-              }
-            },
-            {
-              "name": "merging",
-              "value": {
-                "type": "enum",
-                "enum": "SPACES"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "x",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "number",
-                "number": "%math(0-%var_local(rad))"
-              }
-            }
-          ]
-        },
-        {
-          "action": "call_function",
-          "values": [
-            {
-              "name": "function_name",
-              "value": {
-                "type": "text",
-                "text": "sph_x"
-              }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
-            {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "total",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "batch_count",
                 "scope": "local"
               }
             }
@@ -3303,16 +3095,16 @@
                 "values": [
                   {
                     "type": "text",
-                    "text": "&aСфера содержит &e"
+                    "text": "&aСоздаю сферу радиусом &e"
                   },
                   {
                     "type": "variable",
-                    "variable": "total",
+                    "variable": "rad",
                     "scope": "local"
                   },
                   {
                     "type": "text",
-                    "text": " &aблоков, ставлю пачками 9x9..."
+                    "text": "..."
                   },
                   {},
                   {},
@@ -3414,7 +3206,182 @@
               "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "batch_index",
+                "variable": "x",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "number",
+                "number": "%math(0-%var_local(rad))"
+              }
+            }
+          ]
+        },
+        {
+          "action": "call_function",
+          "values": [
+            {
+              "name": "function_name",
+              "value": {
+                "type": "text",
+                "text": "sph_x"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_get_list_length",
+          "values": [
+            {
+              "name": "list",
+              "value": {
+                "type": "variable",
+                "variable": "batch",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "total",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_create_list",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "jmcc.43",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "values",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "text",
+                    "text": "&aСфера содержит &e"
+                  },
+                  {
+                    "type": "variable",
+                    "variable": "total",
+                    "scope": "local"
+                  },
+                  {
+                    "type": "text",
+                    "text": " &aблоков, ставлю пачками 9x9..."
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_join_text",
+          "values": [
+            {
+              "name": "list",
+              "value": {
+                "type": "variable",
+                "variable": "jmcc.43",
+                "scope": "local"
+              }
+            },
+            {
+              "name": "separator",
+              "value": {
+                "type": "text",
+                "text": ""
+              }
+            },
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "jmcc.44",
+                "scope": "local"
+              }
+            }
+          ]
+        },
+        {
+          "action": "player_send_message",
+          "values": [
+            {
+              "name": "messages",
+              "value": {
+                "type": "array",
+                "values": [
+                  {
+                    "type": "variable",
+                    "variable": "jmcc.44",
+                    "scope": "local"
+                  },
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {}
+                ]
+              }
+            },
+            {
+              "name": "merging",
+              "value": {
+                "type": "enum",
+                "enum": "SPACES"
+              }
+            }
+          ]
+        },
+        {
+          "action": "set_variable_value",
+          "values": [
+            {
+              "name": "variable",
+              "value": {
+                "type": "variable",
+                "variable": "index",
                 "scope": "local"
               }
             },
@@ -3434,7 +3401,7 @@
               "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "batch_size",
+                "variable": "chunk",
                 "scope": "local"
               }
             },
@@ -3481,7 +3448,7 @@
               "name": "value",
               "value": {
                 "type": "variable",
-                "variable": "batch_count",
+                "variable": "total",
                 "scope": "local"
               }
             }
@@ -3667,58 +3634,47 @@
               ]
             },
             {
-              "action": "set_variable_set_list_value",
+              "action": "set_variable_append_value",
               "values": [
+                {
+                  "name": "values",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "variable",
+                        "variable": "loc",
+                        "scope": "local"
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
                 {
                   "name": "variable",
                   "value": {
                     "type": "variable",
                     "variable": "batch",
                     "scope": "local"
-                  }
-                },
-                {
-                  "name": "list",
-                  "value": {
-                    "type": "variable",
-                    "variable": "batch",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "number",
-                  "value": {
-                    "type": "variable",
-                    "variable": "batch_count",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "variable",
-                    "variable": "loc",
-                    "scope": "local"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "batch_count",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "number",
-                    "number": "%math(%var_local(batch_count)+1)"
                   }
                 }
               ]
@@ -3930,7 +3886,7 @@
               "name": "value",
               "value": {
                 "type": "number",
-                "number": "%math(%var_local(batch_index)+%var_local(batch_size))"
+                "number": "%math(%var_local(index)+%var_local(chunk))"
               }
             }
           ]
@@ -3942,7 +3898,7 @@
               "name": "compare",
               "value": {
                 "type": "variable",
-                "variable": "batch_count",
+                "variable": "total",
                 "scope": "local"
               }
             },
@@ -3972,7 +3928,7 @@
                   "name": "value",
                   "value": {
                     "type": "variable",
-                    "variable": "batch_count",
+                    "variable": "total",
                     "scope": "local"
                   }
                 }
@@ -3995,7 +3951,7 @@
               "name": "value",
               "value": {
                 "type": "variable",
-                "variable": "batch_index",
+                "variable": "index",
                 "scope": "local"
               }
             }
@@ -4047,10 +4003,10 @@
               "action": "set_variable_get_list_value",
               "values": [
                 {
-                  "name": "variable",
+                  "name": "number",
                   "value": {
                     "type": "variable",
-                    "variable": "loc",
+                    "variable": "i",
                     "scope": "local"
                   }
                 },
@@ -4063,10 +4019,10 @@
                   }
                 },
                 {
-                  "name": "number",
+                  "name": "variable",
                   "value": {
                     "type": "variable",
-                    "variable": "i",
+                    "variable": "loc",
                     "scope": "local"
                   }
                 }
@@ -4197,7 +4153,7 @@
                   "name": "variable",
                   "value": {
                     "type": "variable",
-                    "variable": "jmcc.42",
+                    "variable": "jmcc.46",
                     "scope": "local"
                   }
                 },
@@ -4249,7 +4205,7 @@
                   "name": "list",
                   "value": {
                     "type": "variable",
-                    "variable": "jmcc.42",
+                    "variable": "jmcc.46",
                     "scope": "local"
                   }
                 },
@@ -4264,7 +4220,7 @@
                   "name": "variable",
                   "value": {
                     "type": "variable",
-                    "variable": "jmcc.43",
+                    "variable": "jmcc.47",
                     "scope": "local"
                   }
                 }
@@ -4280,7 +4236,7 @@
                     "values": [
                       {
                         "type": "variable",
-                        "variable": "jmcc.43",
+                        "variable": "jmcc.47",
                         "scope": "local"
                       },
                       {},
@@ -4319,7 +4275,7 @@
                   "name": "variable",
                   "value": {
                     "type": "variable",
-                    "variable": "batch_index",
+                    "variable": "index",
                     "scope": "local"
                   }
                 },
@@ -4340,7 +4296,7 @@
                   "name": "compare",
                   "value": {
                     "type": "variable",
-                    "variable": "batch_count",
+                    "variable": "total",
                     "scope": "local"
                   }
                 },
@@ -4348,7 +4304,7 @@
                   "name": "value",
                   "value": {
                     "type": "variable",
-                    "variable": "batch_index",
+                    "variable": "index",
                     "scope": "local"
                   }
                 }
@@ -4400,7 +4356,7 @@
                       "name": "variable",
                       "value": {
                         "type": "variable",
-                        "variable": "jmcc.44",
+                        "variable": "jmcc.48",
                         "scope": "local"
                       }
                     },
@@ -4452,7 +4408,7 @@
                       "name": "list",
                       "value": {
                         "type": "variable",
-                        "variable": "jmcc.44",
+                        "variable": "jmcc.48",
                         "scope": "local"
                       }
                     },
@@ -4467,7 +4423,7 @@
                       "name": "variable",
                       "value": {
                         "type": "variable",
-                        "variable": "jmcc.45",
+                        "variable": "jmcc.49",
                         "scope": "local"
                       }
                     }
@@ -4483,7 +4439,7 @@
                         "values": [
                           {
                             "type": "variable",
-                            "variable": "jmcc.45",
+                            "variable": "jmcc.49",
                             "scope": "local"
                           },
                           {},
@@ -4676,14 +4632,6 @@
           "action": "set_variable_create_list",
           "values": [
             {
-              "name": "variable",
-              "value": {
-                "type": "variable",
-                "variable": "batch",
-                "scope": "local"
-              }
-            },
-            {
               "name": "values",
               "value": {
                 "type": "array",
@@ -4711,25 +4659,13 @@
                   {}
                 ]
               }
-            }
-          ]
-        },
-        {
-          "action": "set_variable_value",
-          "values": [
+            },
             {
               "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "batch_count",
+                "variable": "batch",
                 "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "number",
-                "number": 0
               }
             }
           ]
@@ -4741,7 +4677,7 @@
               "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "jmcc.49",
+                "variable": "jmcc.54",
                 "scope": "local"
               }
             },
@@ -4800,7 +4736,7 @@
               "name": "list",
               "value": {
                 "type": "variable",
-                "variable": "jmcc.49",
+                "variable": "jmcc.54",
                 "scope": "local"
               }
             },
@@ -4815,7 +4751,7 @@
               "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "jmcc.50",
+                "variable": "jmcc.55",
                 "scope": "local"
               }
             }
@@ -4831,7 +4767,7 @@
                 "values": [
                   {
                     "type": "variable",
-                    "variable": "jmcc.50",
+                    "variable": "jmcc.55",
                     "scope": "local"
                   },
                   {},
@@ -4896,21 +4832,21 @@
           ]
         },
         {
-          "action": "set_variable_value",
+          "action": "set_variable_get_list_length",
           "values": [
+            {
+              "name": "list",
+              "value": {
+                "type": "variable",
+                "variable": "batch",
+                "scope": "local"
+              }
+            },
             {
               "name": "variable",
               "value": {
                 "type": "variable",
                 "variable": "total",
-                "scope": "local"
-              }
-            },
-            {
-              "name": "value",
-              "value": {
-                "type": "variable",
-                "variable": "batch_count",
                 "scope": "local"
               }
             }
@@ -4923,7 +4859,7 @@
               "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "jmcc.52",
+                "variable": "jmcc.58",
                 "scope": "local"
               }
             },
@@ -4975,7 +4911,7 @@
               "name": "list",
               "value": {
                 "type": "variable",
-                "variable": "jmcc.52",
+                "variable": "jmcc.58",
                 "scope": "local"
               }
             },
@@ -4990,7 +4926,7 @@
               "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "jmcc.53",
+                "variable": "jmcc.59",
                 "scope": "local"
               }
             }
@@ -5006,7 +4942,7 @@
                 "values": [
                   {
                     "type": "variable",
-                    "variable": "jmcc.53",
+                    "variable": "jmcc.59",
                     "scope": "local"
                   },
                   {},
@@ -5045,7 +4981,7 @@
               "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "batch_index",
+                "variable": "index",
                 "scope": "local"
               }
             },
@@ -5065,7 +5001,7 @@
               "name": "variable",
               "value": {
                 "type": "variable",
-                "variable": "batch_size",
+                "variable": "chunk",
                 "scope": "local"
               }
             },
@@ -5112,7 +5048,7 @@
               "name": "value",
               "value": {
                 "type": "variable",
-                "variable": "batch_count",
+                "variable": "total",
                 "scope": "local"
               }
             }
@@ -5298,58 +5234,47 @@
               ]
             },
             {
-              "action": "set_variable_set_list_value",
+              "action": "set_variable_append_value",
               "values": [
+                {
+                  "name": "values",
+                  "value": {
+                    "type": "array",
+                    "values": [
+                      {
+                        "type": "variable",
+                        "variable": "loc",
+                        "scope": "local"
+                      },
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {},
+                      {}
+                    ]
+                  }
+                },
                 {
                   "name": "variable",
                   "value": {
                     "type": "variable",
                     "variable": "batch",
                     "scope": "local"
-                  }
-                },
-                {
-                  "name": "list",
-                  "value": {
-                    "type": "variable",
-                    "variable": "batch",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "number",
-                  "value": {
-                    "type": "variable",
-                    "variable": "batch_count",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "variable",
-                    "variable": "loc",
-                    "scope": "local"
-                  }
-                }
-              ]
-            },
-            {
-              "action": "set_variable_value",
-              "values": [
-                {
-                  "name": "variable",
-                  "value": {
-                    "type": "variable",
-                    "variable": "batch_count",
-                    "scope": "local"
-                  }
-                },
-                {
-                  "name": "value",
-                  "value": {
-                    "type": "number",
-                    "number": "%math(%var_local(batch_count)+1)"
                   }
                 }
               ]
@@ -5561,7 +5486,7 @@
               "name": "value",
               "value": {
                 "type": "number",
-                "number": "%math(%var_local(batch_index)+%var_local(batch_size))"
+                "number": "%math(%var_local(index)+%var_local(chunk))"
               }
             }
           ]
@@ -5573,7 +5498,7 @@
               "name": "compare",
               "value": {
                 "type": "variable",
-                "variable": "batch_count",
+                "variable": "total",
                 "scope": "local"
               }
             },
@@ -5603,7 +5528,7 @@
                   "name": "value",
                   "value": {
                     "type": "variable",
-                    "variable": "batch_count",
+                    "variable": "total",
                     "scope": "local"
                   }
                 }
@@ -5626,7 +5551,7 @@
               "name": "value",
               "value": {
                 "type": "variable",
-                "variable": "batch_index",
+                "variable": "index",
                 "scope": "local"
               }
             }
@@ -5678,10 +5603,10 @@
               "action": "set_variable_get_list_value",
               "values": [
                 {
-                  "name": "variable",
+                  "name": "number",
                   "value": {
                     "type": "variable",
-                    "variable": "loc",
+                    "variable": "i",
                     "scope": "local"
                   }
                 },
@@ -5694,10 +5619,10 @@
                   }
                 },
                 {
-                  "name": "number",
+                  "name": "variable",
                   "value": {
                     "type": "variable",
-                    "variable": "i",
+                    "variable": "loc",
                     "scope": "local"
                   }
                 }
@@ -5828,7 +5753,7 @@
                   "name": "variable",
                   "value": {
                     "type": "variable",
-                    "variable": "jmcc.55",
+                    "variable": "jmcc.61",
                     "scope": "local"
                   }
                 },
@@ -5880,7 +5805,7 @@
                   "name": "list",
                   "value": {
                     "type": "variable",
-                    "variable": "jmcc.55",
+                    "variable": "jmcc.61",
                     "scope": "local"
                   }
                 },
@@ -5895,7 +5820,7 @@
                   "name": "variable",
                   "value": {
                     "type": "variable",
-                    "variable": "jmcc.56",
+                    "variable": "jmcc.62",
                     "scope": "local"
                   }
                 }
@@ -5911,7 +5836,7 @@
                     "values": [
                       {
                         "type": "variable",
-                        "variable": "jmcc.56",
+                        "variable": "jmcc.62",
                         "scope": "local"
                       },
                       {},
@@ -5950,7 +5875,7 @@
                   "name": "variable",
                   "value": {
                     "type": "variable",
-                    "variable": "batch_index",
+                    "variable": "index",
                     "scope": "local"
                   }
                 },
@@ -5971,7 +5896,7 @@
                   "name": "compare",
                   "value": {
                     "type": "variable",
-                    "variable": "batch_count",
+                    "variable": "total",
                     "scope": "local"
                   }
                 },
@@ -5979,7 +5904,7 @@
                   "name": "value",
                   "value": {
                     "type": "variable",
-                    "variable": "batch_index",
+                    "variable": "index",
                     "scope": "local"
                   }
                 }
@@ -6031,7 +5956,7 @@
                       "name": "variable",
                       "value": {
                         "type": "variable",
-                        "variable": "jmcc.57",
+                        "variable": "jmcc.63",
                         "scope": "local"
                       }
                     },
@@ -6083,7 +6008,7 @@
                       "name": "list",
                       "value": {
                         "type": "variable",
-                        "variable": "jmcc.57",
+                        "variable": "jmcc.63",
                         "scope": "local"
                       }
                     },
@@ -6098,7 +6023,7 @@
                       "name": "variable",
                       "value": {
                         "type": "variable",
-                        "variable": "jmcc.58",
+                        "variable": "jmcc.64",
                         "scope": "local"
                       }
                     }
@@ -6114,7 +6039,7 @@
                         "values": [
                           {
                             "type": "variable",
-                            "variable": "jmcc.58",
+                            "variable": "jmcc.64",
                             "scope": "local"
                           },
                           {},
@@ -7150,7 +7075,7 @@
                   "name": "function_name",
                   "value": {
                     "type": "text",
-                    "text": "jmcc.f0"
+                    "text": "jmcc.f1"
                   }
                 }
               ]
@@ -7471,6 +7396,49 @@
       "position": 24,
       "operations": [
         {
+          "action": "if_variable_greater",
+          "values": [
+            {
+              "name": "compare",
+              "value": {
+                "type": "number",
+                "number": 0
+              }
+            },
+            {
+              "name": "value",
+              "value": {
+                "type": "variable",
+                "variable": "batch_size",
+                "scope": "local"
+              }
+            }
+          ],
+          "is_inverted": false,
+          "operations": [
+            {
+              "action": "call_function",
+              "values": [
+                {
+                  "name": "function_name",
+                  "value": {
+                    "type": "text",
+                    "text": "place_batch"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "is_hidden": false,
+      "name": "jmcc.f0"
+    },
+    {
+      "type": "function",
+      "position": 25,
+      "operations": [
+        {
           "action": "set_variable_value",
           "values": [
             {
@@ -7602,7 +7570,7 @@
         }
       ],
       "is_hidden": false,
-      "name": "jmcc.f0"
+      "name": "jmcc.f1"
     }
   ]
 }
