@@ -1,0 +1,42 @@
+// Каменный плот 40x40 на координатах 0, 100, 0
+world::set_region(item("stone"), location(0, 99, 0), location(39, 99, 39));
+world::set_region(item("stone_bricks"), location(0, 100, 0), location(39, 100, 39));
+world::set_region(item("gold_block"), location(0, 101, 0), location(39, 101, 0));
+world::set_region(item("gold_block"), location(0, 101, 39), location(39, 101, 39));
+world::set_region(item("gold_block"), location(0, 101, 1), location(0, 101, 38));
+world::set_region(item("gold_block"), location(39, 101, 1), location(39, 101, 38));
+world::set_block(item("beacon"), location(20, 101, 20));
+world::set_block(item("gold_block"), location(20, 102, 20));
+world::set_block(item("gold_block"), location(20, 103, 20));
+world::set_block(item("gold_block"), location(20, 104, 20));
+
+// Словарь для хранения последней позиции игрока
+var playerLastLocation = variable::create_map();
+
+event<player_join> {
+  var playerUUID = value::uuid<current>;
+  
+  // Сохраняем текущую позицию при входе (или спавн на плот)
+  entity::teleport(location(20, 102, 20), "TRUE");
+  player::message("Добро пожаловать на каменный плот!");
+  
+  // Сохраняем позицию в словарь (если она есть)
+  var lastLocation = variable::get_map_value(playerLastLocation, playerUUID, location(20, 102, 20));
+  entity::teleport(lastLocation, "TRUE");
+}
+
+event<player_quit> {
+  var playerUUID = value::uuid<current>;
+  var currentLocation = value::location<current>;
+  playerLastLocation = variable::set_map_value(playerLastLocation, playerUUID, currentLocation);
+}
+
+event<player_chat> {
+  var message = value::event_chat_message;
+  
+  if (message.equals(["@плот", "@домой"])) {
+    entity::teleport(location(20, 102, 20), "TRUE");
+    player::message("Вы вернулись на плот!");
+    world::cancel_event();
+  }
+}
